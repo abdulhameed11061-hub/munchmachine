@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VendingMachinesRouteImport } from './routes/vending-machines'
 import { Route as SportsEntertainmentRouteImport } from './routes/sports-entertainment'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FaqsRouteImport } from './routes/faqs'
@@ -26,6 +27,11 @@ const VendingMachinesRoute = VendingMachinesRouteImport.update({
 const SportsEntertainmentRoute = SportsEntertainmentRouteImport.update({
   id: '/sports-entertainment',
   path: '/sports-entertainment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesRoute = IndustriesRouteImport.update({
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
   '/industries': typeof IndustriesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sports-entertainment': typeof SportsEntertainmentRoute
   '/vending-machines': typeof VendingMachinesRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
   '/industries': typeof IndustriesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sports-entertainment': typeof SportsEntertainmentRoute
   '/vending-machines': typeof VendingMachinesRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
   '/industries': typeof IndustriesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sports-entertainment': typeof SportsEntertainmentRoute
   '/vending-machines': typeof VendingMachinesRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/faqs'
     | '/gallery'
     | '/industries'
+    | '/sitemap.xml'
     | '/sports-entertainment'
     | '/vending-machines'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/faqs'
     | '/gallery'
     | '/industries'
+    | '/sitemap.xml'
     | '/sports-entertainment'
     | '/vending-machines'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/faqs'
     | '/gallery'
     | '/industries'
+    | '/sitemap.xml'
     | '/sports-entertainment'
     | '/vending-machines'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   FaqsRoute: typeof FaqsRoute
   GalleryRoute: typeof GalleryRoute
   IndustriesRoute: typeof IndustriesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SportsEntertainmentRoute: typeof SportsEntertainmentRoute
   VendingMachinesRoute: typeof VendingMachinesRoute
 }
@@ -148,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/sports-entertainment'
       fullPath: '/sports-entertainment'
       preLoaderRoute: typeof SportsEntertainmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries': {
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqsRoute: FaqsRoute,
   GalleryRoute: GalleryRoute,
   IndustriesRoute: IndustriesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SportsEntertainmentRoute: SportsEntertainmentRoute,
   VendingMachinesRoute: VendingMachinesRoute,
 }
