@@ -33,7 +33,7 @@ function Page() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Vending Machines"
+        kicker="Vending Machines"
         title={<>A range engineered for <span className="text-gradient">every footprint.</span></>}
         subtitle="From compact countertop units to flagship full-height machines — every option is supplied, installed and maintained as part of a fully managed service."
       >

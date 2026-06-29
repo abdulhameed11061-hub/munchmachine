@@ -45,7 +45,7 @@ function Page() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Gallery"
+        kicker="Gallery"
         title={<>Installations &amp; <span className="text-gradient">environments.</span></>}
         subtitle="A look at the kind of spaces we equip — and the kit we install. Product photography placeholders are marked clearly so we can replace them with your specific installs."
       />
