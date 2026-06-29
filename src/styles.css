@@ -146,36 +146,114 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.95rem 1.6rem;
+  gap: 0.6rem;
+  padding: 1.1rem 1.9rem;
   border-radius: 9999px;
   background: var(--gradient-primary);
   color: var(--primary-foreground);
-  font-weight: 600;
-  font-size: 0.92rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   letter-spacing: 0.005em;
   white-space: nowrap;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  position: relative;
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease, filter 0.3s ease;
   box-shadow: var(--shadow-glow);
-  &:hover { transform: translateY(-2px); filter: brightness(1.05); }
+  &::after {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, oklch(1 0 0 / 0.25), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+  &:hover { transform: translateY(-3px); filter: brightness(1.07); box-shadow: 0 40px 90px -20px color-mix(in oklab, var(--primary) 50%, transparent); }
+  &:hover::after { opacity: 1; }
 }
 
 @utility btn-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.95rem 1.6rem;
+  gap: 0.6rem;
+  padding: 1.1rem 1.9rem;
   border-radius: 9999px;
   border: 1px solid var(--border);
   background: color-mix(in oklab, var(--surface) 50%, transparent);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px) saturate(140%);
   color: var(--foreground);
-  font-weight: 500;
-  font-size: 0.92rem;
+  font-weight: 600;
+  font-size: 0.95rem;
   white-space: nowrap;
-  transition: all 0.3s ease;
-  &:hover { background: color-mix(in oklab, var(--surface) 90%, transparent); border-color: var(--primary); }
+  transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
+  &:hover { background: color-mix(in oklab, var(--surface) 95%, transparent); border-color: var(--primary); transform: translateY(-3px); }
+}
+
+@utility card-glass {
+  position: relative;
+  border-radius: 1.75rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--surface-elevated) 70%, transparent), color-mix(in oklab, var(--surface) 85%, transparent));
+  backdrop-filter: blur(20px) saturate(140%);
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1), border-color 0.4s ease, box-shadow 0.5s ease;
+  &::before {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, oklch(1 0 0 / 0.08), transparent 40%, color-mix(in oklab, var(--primary) 25%, transparent));
+    -webkit-mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+    mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  &:hover {
+    transform: translateY(-8px);
+    border-color: color-mix(in oklab, var(--primary) 50%, transparent);
+    box-shadow: 0 40px 90px -30px oklch(0 0 0 / 0.8), 0 0 0 1px color-mix(in oklab, var(--primary) 20%, transparent);
+  }
+}
+
+@utility media-zoom {
+  overflow: hidden;
+  & img { transition: transform 1.2s cubic-bezier(0.22,1,0.36,1), filter 0.6s ease; }
+  &:hover img { transform: scale(1.08); filter: brightness(1.08) saturate(1.05); }
+}
+
+@utility story-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  &::after {
+    content: "";
+    position: absolute; left: 0; bottom: -3px;
+    height: 1px; width: 100%;
+    background: currentColor;
+    transform: scaleX(0); transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+  &:hover::after { transform: scaleX(1); transform-origin: left; }
+}
+
+@utility trust-badge {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.55rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 60%, transparent);
+  backdrop-filter: blur(12px);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--foreground);
+  white-space: nowrap;
 }
 
 @utility kicker {
