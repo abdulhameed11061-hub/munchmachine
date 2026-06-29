@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, Check, ChevronDown, Coffee, Cookie, CupSoda,
   Wrench, CreditCard, ShieldCheck, Leaf, Zap, BadgePoundSterling,
-  Gamepad2, Trophy, Sparkles, MapPin, Banknote, Phone, Quote, Star,
+  Gamepad2, Trophy, Sparkles, MapPin, Phone, Quote, Star,
 } from "lucide-react";
 import heroImg from "@/assets/hero-cinematic.jpg";
 import gymImg from "@/assets/industry-gym.jpg";
