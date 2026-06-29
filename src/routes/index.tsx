@@ -323,31 +323,35 @@ function WhyUs() {
 /* ──────────────── ENTERTAINMENT ──────────────── */
 function Entertainment() {
   const items = [
-    { title: "Air Hockey", desc: "Commercial-grade LED tables that draw a crowd.", hint: "LED rail · digital scoring" },
-    { title: "Basketball", desc: "Arcade hoops with electronic scoring and timers.", hint: "Single & double cabinet" },
-    { title: "Foosball", desc: "Tournament-grade tables built to last.", hint: "Telescopic safety rods" },
-    { title: "Arcade Cabinets", desc: "Modern cabinets stacked with classic titles.", hint: "Multi-game · 4K display" },
-    { title: "Claw Machines", desc: "Branded prize cabinets that reward engagement.", hint: "Adjustable grip & payout" },
-    { title: "Prize Machines", desc: "Token, ticket and prize systems for venues.", hint: "Cashless ready" },
+    { title: "Air Hockey",        img: airHockeyImg,  desc: "Tournament-grade LED tables that magnetise a room." },
+    { title: "Basketball Arcade", img: basketballImg, desc: "Commercial hoops with electronic scoring and timers." },
+    { title: "Foosball Tables",   img: foosballImg,   desc: "Tournament-spec tables engineered for non-stop play." },
+    { title: "Arcade Machines",   img: arcadeImg,     desc: "Modern cabinets with 4K screens and premium controls." },
+    { title: "Grab Machines",     img: grabImg,       desc: "Branded prize cabinets that reward engagement." },
+    { title: "Prize Machines",    img: prizeImg,      desc: "Ticket and redemption systems, cashless ready." },
   ];
   return (
-    <section className="relative py-24 lg:py-32 bg-surface/40 border-y border-border overflow-hidden">
+    <section className="relative py-28 lg:py-36 bg-surface/40 border-y border-border overflow-hidden">
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[140px]" aria-hidden="true" />
       <div className="container-x relative">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <SectionHeader
-            kicker="Sports & entertainment"
+            kicker="Interactive Entertainment Solutions"
             title={<>Turn dwell time into <span className="text-accent">delight.</span></>}
           />
-          <Link to="/sports-entertainment" className="btn-ghost shrink-0">View all <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
+          <Link to="/sports-entertainment" className="btn-ghost shrink-0">Explore all 10 <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((g) => (
-            <article key={g.title} className="group rounded-2xl border border-border bg-surface overflow-hidden hover-lift">
-              <PhotoPlaceholder label={g.title} hint={g.hint} ratio="16/11" />
-              <div className="p-6">
+            <article key={g.title} className="card-glass group">
+              <div className="media-zoom relative aspect-[16/11]">
+                <img src={g.img} alt={g.title} loading="lazy" width={1280} height={880} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="p-7">
                 <h3 className="text-lg font-extrabold">{g.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{g.desc}</p>
+                <Link to="/sports-entertainment" className="story-link mt-4 text-sm">Learn more <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
               </div>
             </article>
           ))}
@@ -356,6 +360,7 @@ function Entertainment() {
     </section>
   );
 }
+
 
 /* ──────────────── INDUSTRIES ──────────────── */
 function Industries() {
