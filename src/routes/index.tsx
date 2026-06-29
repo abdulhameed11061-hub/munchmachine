@@ -2,16 +2,26 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, Check, ChevronDown, Coffee, Cookie, CupSoda,
   Wrench, CreditCard, ShieldCheck, Leaf, Zap, BadgePoundSterling,
-  Phone, Gamepad2, Trophy, Quote, Sparkles, Star,
+  Gamepad2, Trophy, Sparkles, MapPin, Banknote,
 } from "lucide-react";
-import heroImg from "@/assets/hero-lobby.jpg";
+import heroImg from "@/assets/hero-cinematic.jpg";
 import gymImg from "@/assets/industry-gym.jpg";
 import hotelImg from "@/assets/industry-hotel.jpg";
 import officeImg from "@/assets/industry-office.jpg";
 import warehouseImg from "@/assets/industry-warehouse.jpg";
 import studentImg from "@/assets/industry-student.jpg";
 import constructionImg from "@/assets/industry-construction.jpg";
-import { PageShell, SectionHeader, MachineSilhouette, PhotoPlaceholder } from "@/components/site/PageShell";
+import smallImg from "@/assets/machine-small.jpg";
+import mediumImg from "@/assets/machine-medium.jpg";
+import largeImg from "@/assets/machine-large.jpg";
+import airHockeyImg from "@/assets/ent-air-hockey.jpg";
+import basketballImg from "@/assets/ent-basketball.jpg";
+import foosballImg from "@/assets/ent-foosball.jpg";
+import arcadeImg from "@/assets/ent-arcade.jpg";
+import grabImg from "@/assets/ent-grab.jpg";
+import prizeImg from "@/assets/ent-prize.jpg";
+import { PageShell, SectionHeader } from "@/components/site/PageShell";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
