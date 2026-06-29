@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VendingMachinesRouteImport } from './routes/vending-machines'
+import { Route as SportsEntertainmentRouteImport } from './routes/sports-entertainment'
+import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VendingMachinesRoute = VendingMachinesRouteImport.update({
+  id: '/vending-machines',
+  path: '/vending-machines',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportsEntertainmentRoute = SportsEntertainmentRouteImport.update({
+  id: '/sports-entertainment',
+  path: '/sports-entertainment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesRoute = IndustriesRouteImport.update({
+  id: '/industries',
+  path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqsRoute = FaqsRouteImport.update({
+  id: '/faqs',
+  path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
+  '/industries': typeof IndustriesRoute
+  '/sports-entertainment': typeof SportsEntertainmentRoute
+  '/vending-machines': typeof VendingMachinesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
+  '/industries': typeof IndustriesRoute
+  '/sports-entertainment': typeof SportsEntertainmentRoute
+  '/vending-machines': typeof VendingMachinesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
+  '/industries': typeof IndustriesRoute
+  '/sports-entertainment': typeof SportsEntertainmentRoute
+  '/vending-machines': typeof VendingMachinesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faqs'
+    | '/gallery'
+    | '/industries'
+    | '/sports-entertainment'
+    | '/vending-machines'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faqs'
+    | '/gallery'
+    | '/industries'
+    | '/sports-entertainment'
+    | '/vending-machines'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faqs'
+    | '/gallery'
+    | '/industries'
+    | '/sports-entertainment'
+    | '/vending-machines'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  FaqsRoute: typeof FaqsRoute
+  GalleryRoute: typeof GalleryRoute
+  IndustriesRoute: typeof IndustriesRoute
+  SportsEntertainmentRoute: typeof SportsEntertainmentRoute
+  VendingMachinesRoute: typeof VendingMachinesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vending-machines': {
+      id: '/vending-machines'
+      path: '/vending-machines'
+      fullPath: '/vending-machines'
+      preLoaderRoute: typeof VendingMachinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sports-entertainment': {
+      id: '/sports-entertainment'
+      path: '/sports-entertainment'
+      fullPath: '/sports-entertainment'
+      preLoaderRoute: typeof SportsEntertainmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries': {
+      id: '/industries'
+      path: '/industries'
+      fullPath: '/industries'
+      preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faqs': {
+      id: '/faqs'
+      path: '/faqs'
+      fullPath: '/faqs'
+      preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +197,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  FaqsRoute: FaqsRoute,
+  GalleryRoute: GalleryRoute,
+  IndustriesRoute: IndustriesRoute,
+  SportsEntertainmentRoute: SportsEntertainmentRoute,
+  VendingMachinesRoute: VendingMachinesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
