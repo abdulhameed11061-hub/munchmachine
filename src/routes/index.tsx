@@ -59,17 +59,17 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/30 to-transparent" aria-hidden="true" />
 
       <div className="container-x relative pb-24 lg:pb-28 pt-36 w-full">
-        <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-primary font-semibold animate-fade-up">
+        <div className="max-w-5xl">
+          <span className="inline-flex items-center gap-3 text-[11px] tracking-[0.28em] uppercase text-primary font-semibold animate-fade-up">
             <span className="w-8 h-px bg-primary" /> London &amp; Essex · Fully Managed
           </span>
           <h1
-            className="mt-5 font-display text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.96] tracking-tight animate-fade-up"
+            className="mt-5 font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] leading-[0.98] tracking-tight animate-fade-up"
             style={{ animationDelay: "120ms" }}
           >
-            Premium <span className="text-gradient whitespace-nowrap">vending</span> &amp;<br className="hidden sm:block" />{" "}
-            entertainment,<br className="hidden sm:block" />{" "}
-            <span className="text-muted-foreground">quietly perfected.</span>
+            Premium <span className="text-gradient">vending</span> &amp;{" "}
+            <span className="block sm:inline">entertainment,</span>{" "}
+            <span className="block text-foreground/55">quietly perfected.</span>
           </h1>
           <p
             className="mt-7 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
