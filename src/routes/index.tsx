@@ -2,16 +2,26 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, Check, ChevronDown, Coffee, Cookie, CupSoda,
   Wrench, CreditCard, ShieldCheck, Leaf, Zap, BadgePoundSterling,
-  Phone, Gamepad2, Trophy, Quote, Sparkles, Star,
+  Gamepad2, Trophy, Sparkles, MapPin, Phone, Quote, Star,
 } from "lucide-react";
-import heroImg from "@/assets/hero-lobby.jpg";
+import heroImg from "@/assets/hero-cinematic.jpg";
 import gymImg from "@/assets/industry-gym.jpg";
 import hotelImg from "@/assets/industry-hotel.jpg";
 import officeImg from "@/assets/industry-office.jpg";
 import warehouseImg from "@/assets/industry-warehouse.jpg";
 import studentImg from "@/assets/industry-student.jpg";
 import constructionImg from "@/assets/industry-construction.jpg";
-import { PageShell, SectionHeader, MachineSilhouette, PhotoPlaceholder } from "@/components/site/PageShell";
+import smallImg from "@/assets/machine-small.jpg";
+import mediumImg from "@/assets/machine-medium.jpg";
+import largeImg from "@/assets/machine-large.jpg";
+import airHockeyImg from "@/assets/ent-air-hockey.jpg";
+import basketballImg from "@/assets/ent-basketball.jpg";
+import foosballImg from "@/assets/ent-foosball.jpg";
+import arcadeImg from "@/assets/ent-arcade.jpg";
+import grabImg from "@/assets/ent-grab.jpg";
+import prizeImg from "@/assets/ent-prize.jpg";
+import { PageShell, SectionHeader } from "@/components/site/PageShell";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,75 +56,81 @@ function HomePage() {
 
 /* ───────────────────── HERO ───────────────────── */
 function Hero() {
+  const badges = [
+    { icon: BadgePoundSterling, label: "Free Installation" },
+    { icon: Wrench, label: "Fully Managed" },
+    { icon: CreditCard, label: "Cashless Payments" },
+    { icon: MapPin, label: "London & Essex" },
+  ];
   return (
     <section className="relative min-h-dvh flex items-end overflow-hidden">
       <img
         src={heroImg}
-        alt="Premium corporate lobby with city skyline at dusk"
+        alt="Premium vending machine glowing in a modern London skyline lobby at dusk"
         width={1920}
         height={1280}
+        fetchPriority="high"
         className="absolute inset-0 w-full h-full object-cover scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/30 to-transparent" aria-hidden="true" />
+      {/* Cinematic letterboxing + colour grade */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-background/20" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/35 to-transparent" aria-hidden="true" />
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/80 to-transparent" aria-hidden="true" />
 
-      <div className="container-x relative pb-24 lg:pb-28 pt-36 w-full">
+      <div className="container-x relative pb-28 lg:pb-32 pt-40 w-full">
         <div className="max-w-5xl">
-          <span className="inline-flex items-center gap-3 text-[11px] tracking-[0.28em] uppercase text-primary font-semibold animate-fade-up">
-            <span className="w-8 h-px bg-primary" /> London &amp; Essex · Fully Managed
+          <span className="inline-flex items-center gap-3 text-[11px] tracking-[0.32em] uppercase text-primary font-semibold animate-fade-up">
+            <span className="w-10 h-px bg-primary" /> London &amp; Essex · Est. since day one
           </span>
           <h1
-            className="mt-5 font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] leading-[0.98] tracking-tight animate-fade-up"
+            className="mt-6 font-display text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem] leading-[0.96] tracking-tight animate-fade-up"
             style={{ animationDelay: "120ms" }}
           >
-            Premium <span className="text-gradient">vending</span> &amp;{" "}
-            <span className="block sm:inline">entertainment,</span>{" "}
-            <span className="block text-foreground/55">quietly perfected.</span>
+            Workplace fuel,<br />
+            <span className="text-gradient">cinematically</span> delivered.
           </h1>
           <p
-            className="mt-7 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
+            className="mt-8 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
             style={{ animationDelay: "220ms" }}
           >
-            We supply, install and maintain premium vending machines and interactive
-            entertainment equipment throughout London &amp; Essex — without compromise.
+            Premium vending, bean-to-cup coffee and interactive entertainment —
+            installed, stocked and maintained for the businesses London &amp; Essex
+            care most about.
           </p>
           <div
-            className="mt-9 flex flex-wrap gap-3 animate-fade-up"
+            className="mt-10 flex flex-wrap gap-3 animate-fade-up"
             style={{ animationDelay: "320ms" }}
           >
             <Link to="/contact" className="btn-primary">
               Get a Free Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <Link to="/vending-machines" className="btn-ghost">
-              Explore Our Machines
+              Explore the range
             </Link>
           </div>
 
-          <dl
-            className="mt-14 grid grid-cols-3 gap-6 max-w-xl animate-fade-up"
-            style={{ animationDelay: "440ms" }}
+          <div
+            className="mt-10 flex flex-wrap gap-2.5 animate-fade-up"
+            style={{ animationDelay: "420ms" }}
+            aria-label="Trust badges"
           >
-            {[
-              ["£0", "Upfront cost"],
-              ["24/7", "Engineer response"],
-              ["100%", "Fully managed"],
-            ].map(([n, l]) => (
-              <div key={l as string} className="border-l border-border pl-4">
-                <dt className="font-display text-2xl md:text-3xl font-extrabold text-foreground">{n}</dt>
-                <dd className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.18em] text-muted-foreground">{l}</dd>
-              </div>
+            {badges.map((b) => (
+              <span key={b.label} className="trust-badge">
+                <b.icon className="w-3.5 h-3.5 text-primary" aria-hidden="true" /> {b.label}
+              </span>
             ))}
-          </dl>
+          </div>
         </div>
 
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-muted-foreground">
-          <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-muted-foreground">
+          <span className="text-[10px] uppercase tracking-[0.32em]">Scroll</span>
           <ChevronDown className="w-4 h-4 animate-scroll-hint" aria-hidden="true" />
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ──────────────── TRUST STRIP ──────────────── */
 function TrustStrip() {
@@ -187,7 +203,7 @@ function MachineRange() {
       capacity: "Up to ~30 snack lines",
       ideal: "Small offices, salons, studios",
       features: ["Compact footprint", "Contactless ready", "Energy-efficient cooling"],
-      variant: "small" as const,
+      img: smallImg,
     },
     {
       tag: "Most popular",
@@ -195,7 +211,7 @@ function MachineRange() {
       capacity: "Up to ~40 snack & drink lines",
       ideal: "Hotels, gyms, mid-size offices",
       features: ["Glass-front combo", "Cash + card + contactless", "LED interior lighting"],
-      variant: "medium" as const,
+      img: mediumImg,
       featured: true,
     },
     {
@@ -204,40 +220,41 @@ function MachineRange() {
       capacity: "60+ snack & drink lines",
       ideal: "Sites, warehouses, large floors",
       features: ["Full-height capacity", "Dual temp zones", "Smart telemetry"],
-      variant: "large" as const,
+      img: largeImg,
     },
   ];
   return (
-    <section className="py-24 lg:py-32 bg-surface/40 border-y border-border">
+    <section className="py-28 lg:py-36 bg-surface/40 border-y border-border">
       <div className="container-x">
         <SectionHeader
           kicker="The range"
-          title={<>Three sizes. <span className="text-accent">Engineered to fit.</span></>}
-          intro="Every machine ships with cashless payments as standard and is installed, stocked and serviced as part of our fully managed package."
+          title={<>Three classes. <span className="text-accent">Engineered to fit.</span></>}
+          intro="Every machine ships with cashless payments as standard — installed, stocked and serviced as part of our fully managed package."
           align="center"
         />
-        <div className="mt-14 grid lg:grid-cols-3 gap-4">
+        <div className="mt-16 grid lg:grid-cols-3 gap-6">
           {tiers.map((t) => (
             <article
               key={t.title}
-              className={`relative p-6 rounded-3xl border ${
-                t.featured ? "border-primary/50 bg-surface shadow-[var(--shadow-glow)]" : "border-border bg-surface"
-              } hover-lift overflow-hidden`}
+              className={`card-glass group ${t.featured ? "lg:-translate-y-4 shadow-[var(--shadow-glow)]" : ""}`}
             >
               {t.featured && (
-                <div className="absolute top-4 right-4 z-10 text-[9px] uppercase tracking-[0.22em] text-primary border border-primary/40 px-2.5 py-1 rounded-full bg-primary/10 backdrop-blur-sm">
+                <div className="absolute top-5 right-5 z-10 text-[9px] uppercase tracking-[0.24em] text-primary border border-primary/40 px-2.5 py-1 rounded-full bg-primary/10 backdrop-blur-sm">
                   Most popular
                 </div>
               )}
-              <MachineSilhouette variant={t.variant} />
-              <div className="mt-6">
+              <div className="media-zoom relative aspect-[4/5]">
+                <img src={t.img} alt={`${t.title} commercial vending machine`} loading="lazy" width={1280} height={1600} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent pointer-events-none" />
+              </div>
+              <div className="p-8">
                 <div className="flex items-baseline justify-between gap-3">
                   <h3 className="text-2xl font-extrabold">{t.title}</h3>
-                  {!t.featured && <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{t.tag}</span>}
+                  {!t.featured && <span className="text-[10px] uppercase tracking-[0.24em] text-muted-foreground">{t.tag}</span>}
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{t.capacity}</p>
                 <p className="mt-1 text-xs text-muted-foreground">Ideal: {t.ideal}</p>
-                <ul className="mt-5 space-y-2">
+                <ul className="mt-6 space-y-2.5">
                   {t.features.map((f) => (
                     <li key={f} className="flex gap-2.5 text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" aria-hidden="true" />
@@ -245,7 +262,7 @@ function MachineRange() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all">
+                <Link to="/contact" className="story-link mt-7 text-sm">
                   Request this machine <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -256,6 +273,7 @@ function MachineRange() {
     </section>
   );
 }
+
 
 /* ──────────────── WHY US ──────────────── */
 function WhyUs() {
@@ -305,31 +323,35 @@ function WhyUs() {
 /* ──────────────── ENTERTAINMENT ──────────────── */
 function Entertainment() {
   const items = [
-    { title: "Air Hockey", desc: "Commercial-grade LED tables that draw a crowd.", hint: "LED rail · digital scoring" },
-    { title: "Basketball", desc: "Arcade hoops with electronic scoring and timers.", hint: "Single & double cabinet" },
-    { title: "Foosball", desc: "Tournament-grade tables built to last.", hint: "Telescopic safety rods" },
-    { title: "Arcade Cabinets", desc: "Modern cabinets stacked with classic titles.", hint: "Multi-game · 4K display" },
-    { title: "Claw Machines", desc: "Branded prize cabinets that reward engagement.", hint: "Adjustable grip & payout" },
-    { title: "Prize Machines", desc: "Token, ticket and prize systems for venues.", hint: "Cashless ready" },
+    { title: "Air Hockey",        img: airHockeyImg,  desc: "Tournament-grade LED tables that magnetise a room." },
+    { title: "Basketball Arcade", img: basketballImg, desc: "Commercial hoops with electronic scoring and timers." },
+    { title: "Foosball Tables",   img: foosballImg,   desc: "Tournament-spec tables engineered for non-stop play." },
+    { title: "Arcade Machines",   img: arcadeImg,     desc: "Modern cabinets with 4K screens and premium controls." },
+    { title: "Grab Machines",     img: grabImg,       desc: "Branded prize cabinets that reward engagement." },
+    { title: "Prize Machines",    img: prizeImg,      desc: "Ticket and redemption systems, cashless ready." },
   ];
   return (
-    <section className="relative py-24 lg:py-32 bg-surface/40 border-y border-border overflow-hidden">
+    <section className="relative py-28 lg:py-36 bg-surface/40 border-y border-border overflow-hidden">
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[140px]" aria-hidden="true" />
       <div className="container-x relative">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <SectionHeader
-            kicker="Sports & entertainment"
+            kicker="Interactive Entertainment Solutions"
             title={<>Turn dwell time into <span className="text-accent">delight.</span></>}
           />
-          <Link to="/sports-entertainment" className="btn-ghost shrink-0">View all <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
+          <Link to="/sports-entertainment" className="btn-ghost shrink-0">Explore all 10 <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((g) => (
-            <article key={g.title} className="group rounded-2xl border border-border bg-surface overflow-hidden hover-lift">
-              <PhotoPlaceholder label={g.title} hint={g.hint} ratio="16/11" />
-              <div className="p-6">
+            <article key={g.title} className="card-glass group">
+              <div className="media-zoom relative aspect-[16/11]">
+                <img src={g.img} alt={g.title} loading="lazy" width={1280} height={880} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="p-7">
                 <h3 className="text-lg font-extrabold">{g.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{g.desc}</p>
+                <Link to="/sports-entertainment" className="story-link mt-4 text-sm">Learn more <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
               </div>
             </article>
           ))}
@@ -338,6 +360,7 @@ function Entertainment() {
     </section>
   );
 }
+
 
 /* ──────────────── INDUSTRIES ──────────────── */
 function Industries() {
