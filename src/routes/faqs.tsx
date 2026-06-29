@@ -47,7 +47,7 @@ function Page() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="FAQs"
+        kicker="FAQs"
         title={<>Everything you need <span className="text-gradient">to know.</span></>}
         subtitle="If your question isn't here, our team will happily answer it — usually within the hour."
       >

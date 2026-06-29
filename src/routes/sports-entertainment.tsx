@@ -29,7 +29,7 @@ function Page() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Sports & Entertainment"
+        kicker="Sports & Entertainment"
         title={<>Interactive equipment that <span className="text-gradient">earns its space.</span></>}
         subtitle="Commercial-grade entertainment machines that transform common rooms, lobbies and break areas into the most-talked-about spaces in the building."
       >

@@ -20,7 +20,7 @@ function Page() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="About"
+        kicker="About"
         title={<>A quietly excellent <span className="text-gradient">vending partner.</span></>}
         subtitle="We supply, install, stock and maintain commercial vending and interactive entertainment machines across London and Essex — as a fully managed service."
       />

@@ -44,7 +44,7 @@ function Page() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Industries"
+        kicker="Industries"
         title={<>One partner, <span className="text-gradient">every environment.</span></>}
         subtitle="We tailor the machine, the product range and the service schedule to your team, your traffic and your space."
       >
