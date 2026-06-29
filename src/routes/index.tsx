@@ -203,7 +203,7 @@ function MachineRange() {
       capacity: "Up to ~30 snack lines",
       ideal: "Small offices, salons, studios",
       features: ["Compact footprint", "Contactless ready", "Energy-efficient cooling"],
-      variant: "small" as const,
+      img: smallImg,
     },
     {
       tag: "Most popular",
@@ -211,7 +211,7 @@ function MachineRange() {
       capacity: "Up to ~40 snack & drink lines",
       ideal: "Hotels, gyms, mid-size offices",
       features: ["Glass-front combo", "Cash + card + contactless", "LED interior lighting"],
-      variant: "medium" as const,
+      img: mediumImg,
       featured: true,
     },
     {
@@ -220,40 +220,41 @@ function MachineRange() {
       capacity: "60+ snack & drink lines",
       ideal: "Sites, warehouses, large floors",
       features: ["Full-height capacity", "Dual temp zones", "Smart telemetry"],
-      variant: "large" as const,
+      img: largeImg,
     },
   ];
   return (
-    <section className="py-24 lg:py-32 bg-surface/40 border-y border-border">
+    <section className="py-28 lg:py-36 bg-surface/40 border-y border-border">
       <div className="container-x">
         <SectionHeader
           kicker="The range"
-          title={<>Three sizes. <span className="text-accent">Engineered to fit.</span></>}
-          intro="Every machine ships with cashless payments as standard and is installed, stocked and serviced as part of our fully managed package."
+          title={<>Three classes. <span className="text-accent">Engineered to fit.</span></>}
+          intro="Every machine ships with cashless payments as standard — installed, stocked and serviced as part of our fully managed package."
           align="center"
         />
-        <div className="mt-14 grid lg:grid-cols-3 gap-4">
+        <div className="mt-16 grid lg:grid-cols-3 gap-6">
           {tiers.map((t) => (
             <article
               key={t.title}
-              className={`relative p-6 rounded-3xl border ${
-                t.featured ? "border-primary/50 bg-surface shadow-[var(--shadow-glow)]" : "border-border bg-surface"
-              } hover-lift overflow-hidden`}
+              className={`card-glass group ${t.featured ? "lg:-translate-y-4 shadow-[var(--shadow-glow)]" : ""}`}
             >
               {t.featured && (
-                <div className="absolute top-4 right-4 z-10 text-[9px] uppercase tracking-[0.22em] text-primary border border-primary/40 px-2.5 py-1 rounded-full bg-primary/10 backdrop-blur-sm">
+                <div className="absolute top-5 right-5 z-10 text-[9px] uppercase tracking-[0.24em] text-primary border border-primary/40 px-2.5 py-1 rounded-full bg-primary/10 backdrop-blur-sm">
                   Most popular
                 </div>
               )}
-              <MachineSilhouette variant={t.variant} />
-              <div className="mt-6">
+              <div className="media-zoom relative aspect-[4/5]">
+                <img src={t.img} alt={`${t.title} commercial vending machine`} loading="lazy" width={1280} height={1600} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent pointer-events-none" />
+              </div>
+              <div className="p-8">
                 <div className="flex items-baseline justify-between gap-3">
                   <h3 className="text-2xl font-extrabold">{t.title}</h3>
-                  {!t.featured && <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{t.tag}</span>}
+                  {!t.featured && <span className="text-[10px] uppercase tracking-[0.24em] text-muted-foreground">{t.tag}</span>}
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{t.capacity}</p>
                 <p className="mt-1 text-xs text-muted-foreground">Ideal: {t.ideal}</p>
-                <ul className="mt-5 space-y-2">
+                <ul className="mt-6 space-y-2.5">
                   {t.features.map((f) => (
                     <li key={f} className="flex gap-2.5 text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" aria-hidden="true" />
@@ -261,7 +262,7 @@ function MachineRange() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all">
+                <Link to="/contact" className="story-link mt-7 text-sm">
                   Request this machine <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -272,6 +273,7 @@ function MachineRange() {
     </section>
   );
 }
+
 
 /* ──────────────── WHY US ──────────────── */
 function WhyUs() {
