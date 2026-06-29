@@ -56,75 +56,81 @@ function HomePage() {
 
 /* ───────────────────── HERO ───────────────────── */
 function Hero() {
+  const badges = [
+    { icon: BadgePoundSterling, label: "Free Installation" },
+    { icon: Wrench, label: "Fully Managed" },
+    { icon: CreditCard, label: "Cashless Payments" },
+    { icon: MapPin, label: "London & Essex" },
+  ];
   return (
     <section className="relative min-h-dvh flex items-end overflow-hidden">
       <img
         src={heroImg}
-        alt="Premium corporate lobby with city skyline at dusk"
+        alt="Premium vending machine glowing in a modern London skyline lobby at dusk"
         width={1920}
         height={1280}
+        fetchPriority="high"
         className="absolute inset-0 w-full h-full object-cover scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/30 to-transparent" aria-hidden="true" />
+      {/* Cinematic letterboxing + colour grade */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-background/20" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/35 to-transparent" aria-hidden="true" />
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/80 to-transparent" aria-hidden="true" />
 
-      <div className="container-x relative pb-24 lg:pb-28 pt-36 w-full">
+      <div className="container-x relative pb-28 lg:pb-32 pt-40 w-full">
         <div className="max-w-5xl">
-          <span className="inline-flex items-center gap-3 text-[11px] tracking-[0.28em] uppercase text-primary font-semibold animate-fade-up">
-            <span className="w-8 h-px bg-primary" /> London &amp; Essex · Fully Managed
+          <span className="inline-flex items-center gap-3 text-[11px] tracking-[0.32em] uppercase text-primary font-semibold animate-fade-up">
+            <span className="w-10 h-px bg-primary" /> London &amp; Essex · Est. since day one
           </span>
           <h1
-            className="mt-5 font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] leading-[0.98] tracking-tight animate-fade-up"
+            className="mt-6 font-display text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem] leading-[0.96] tracking-tight animate-fade-up"
             style={{ animationDelay: "120ms" }}
           >
-            Premium <span className="text-gradient">vending</span> &amp;{" "}
-            <span className="block sm:inline">entertainment,</span>{" "}
-            <span className="block text-foreground/55">quietly perfected.</span>
+            Workplace fuel,<br />
+            <span className="text-gradient">cinematically</span> delivered.
           </h1>
           <p
-            className="mt-7 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
+            className="mt-8 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
             style={{ animationDelay: "220ms" }}
           >
-            We supply, install and maintain premium vending machines and interactive
-            entertainment equipment throughout London &amp; Essex — without compromise.
+            Premium vending, bean-to-cup coffee and interactive entertainment —
+            installed, stocked and maintained for the businesses London &amp; Essex
+            care most about.
           </p>
           <div
-            className="mt-9 flex flex-wrap gap-3 animate-fade-up"
+            className="mt-10 flex flex-wrap gap-3 animate-fade-up"
             style={{ animationDelay: "320ms" }}
           >
             <Link to="/contact" className="btn-primary">
               Get a Free Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <Link to="/vending-machines" className="btn-ghost">
-              Explore Our Machines
+              Explore the range
             </Link>
           </div>
 
-          <dl
-            className="mt-14 grid grid-cols-3 gap-6 max-w-xl animate-fade-up"
-            style={{ animationDelay: "440ms" }}
+          <div
+            className="mt-10 flex flex-wrap gap-2.5 animate-fade-up"
+            style={{ animationDelay: "420ms" }}
+            aria-label="Trust badges"
           >
-            {[
-              ["£0", "Upfront cost"],
-              ["24/7", "Engineer response"],
-              ["100%", "Fully managed"],
-            ].map(([n, l]) => (
-              <div key={l as string} className="border-l border-border pl-4">
-                <dt className="font-display text-2xl md:text-3xl font-extrabold text-foreground">{n}</dt>
-                <dd className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.18em] text-muted-foreground">{l}</dd>
-              </div>
+            {badges.map((b) => (
+              <span key={b.label} className="trust-badge">
+                <b.icon className="w-3.5 h-3.5 text-primary" aria-hidden="true" /> {b.label}
+              </span>
             ))}
-          </dl>
+          </div>
         </div>
 
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-muted-foreground">
-          <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-muted-foreground">
+          <span className="text-[10px] uppercase tracking-[0.32em]">Scroll</span>
           <ChevronDown className="w-4 h-4 animate-scroll-hint" aria-hidden="true" />
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ──────────────── TRUST STRIP ──────────────── */
 function TrustStrip() {
