@@ -6,14 +6,14 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-cinematic.jpg";
 import gymImg from "@/assets/industry-gym.jpg";
-import hotelImg from "@/assets/industry-hotel.jpg";
-import officeImg from "@/assets/industry-office.jpg";
+import hotelAsset from "@/assets/uploads/hotel.png.asset.json";
+import officeAsset from "@/assets/uploads/office.png.asset.json";
 import warehouseImg from "@/assets/industry-warehouse.jpg";
-import studentImg from "@/assets/industry-student.jpg";
+import studentAsset from "@/assets/uploads/student-accommodation.png.asset.json";
 import constructionImg from "@/assets/industry-construction.jpg";
-import smallImg from "@/assets/machine-small.jpg";
-import mediumImg from "@/assets/machine-medium.jpg";
-import largeImg from "@/assets/machine-large.jpg";
+import smallAsset from "@/assets/uploads/small.png.asset.json";
+import mediumAsset from "@/assets/uploads/medium.png.asset.json";
+import largeAsset from "@/assets/uploads/large.png.asset.json";
 import airHockeyImg from "@/assets/ent-air-hockey.jpg";
 import basketballImg from "@/assets/ent-basketball.jpg";
 import foosballImg from "@/assets/ent-foosball.jpg";
@@ -203,7 +203,7 @@ function MachineRange() {
       capacity: "Up to ~30 snack lines",
       ideal: "Small offices, salons, studios",
       features: ["Compact footprint", "Contactless ready", "Energy-efficient cooling"],
-      img: smallImg,
+      img: smallAsset.url,
     },
     {
       tag: "Most popular",
@@ -211,7 +211,7 @@ function MachineRange() {
       capacity: "Up to ~40 snack & drink lines",
       ideal: "Hotels, gyms, mid-size offices",
       features: ["Glass-front combo", "Cash + card + contactless", "LED interior lighting"],
-      img: mediumImg,
+      img: mediumAsset.url,
       featured: true,
     },
     {
@@ -220,7 +220,7 @@ function MachineRange() {
       capacity: "60+ snack & drink lines",
       ideal: "Sites, warehouses, large floors",
       features: ["Full-height capacity", "Dual temp zones", "Smart telemetry"],
-      img: largeImg,
+      img: largeAsset.url,
     },
   ];
   return (
@@ -365,11 +365,11 @@ function Entertainment() {
 /* ──────────────── INDUSTRIES ──────────────── */
 function Industries() {
   const list = [
-    { name: "Hotels", img: hotelImg, copy: "Guest-ready 24/7 with premium snack and drink selections." },
+    { name: "Hotels", img: hotelAsset.url, copy: "Guest-ready 24/7 with premium snack and drink selections." },
     { name: "Gyms", img: gymImg, copy: "Protein bars, isotonics and recovery essentials, on-tap." },
-    { name: "Offices", img: officeImg, copy: "Bean-to-cup coffee and balanced snacks that boost focus." },
+    { name: "Offices", img: officeAsset.url, copy: "Bean-to-cup coffee and balanced snacks that boost focus." },
     { name: "Warehouses", img: warehouseImg, copy: "Rugged kit for heavy-traffic break areas." },
-    { name: "Student Accommodation", img: studentImg, copy: "Late-night fuel with cashless convenience." },
+    { name: "Student Accommodation", img: studentAsset.url, copy: "Late-night fuel with cashless convenience." },
     { name: "Construction Sites", img: constructionImg, copy: "Site-tough machines designed for fast turnaround." },
   ];
   return (
