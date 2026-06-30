@@ -203,7 +203,7 @@ function MachineRange() {
       capacity: "Up to ~30 snack lines",
       ideal: "Small offices, salons, studios",
       features: ["Compact footprint", "Contactless ready", "Energy-efficient cooling"],
-      img: smallImg,
+      img: smallAsset.url,
     },
     {
       tag: "Most popular",
@@ -211,7 +211,7 @@ function MachineRange() {
       capacity: "Up to ~40 snack & drink lines",
       ideal: "Hotels, gyms, mid-size offices",
       features: ["Glass-front combo", "Cash + card + contactless", "LED interior lighting"],
-      img: mediumImg,
+      img: mediumAsset.url,
       featured: true,
     },
     {
@@ -220,7 +220,7 @@ function MachineRange() {
       capacity: "60+ snack & drink lines",
       ideal: "Sites, warehouses, large floors",
       features: ["Full-height capacity", "Dual temp zones", "Smart telemetry"],
-      img: largeImg,
+      img: largeAsset.url,
     },
   ];
   return (
