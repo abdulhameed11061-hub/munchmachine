@@ -8,7 +8,7 @@ import arcade from "@/assets/ent-arcade.jpg";
 import grab from "@/assets/ent-grab.jpg";
 import prize from "@/assets/ent-prize.jpg";
 import dance from "@/assets/ent-dance.jpg";
-import racing from "@/assets/ent-racing.jpg";
+import racingAsset from "@/assets/uploads/racing-simulator-03.jpg.asset.json";
 import boxing from "@/assets/ent-boxing.jpg";
 import kiddie from "@/assets/ent-kiddie.jpg";
 
@@ -34,7 +34,7 @@ const items = [
   { name: "Grab Machines",     img: grab,       desc: "Branded prize cabinets with adjustable grip — engagement, packaged." },
   { name: "Prize Machines",    img: prize,      desc: "Ticket and redemption systems built for arcades, parks and leisure venues." },
   { name: "Dance Machines",    img: dance,      desc: "Illuminated floor pads and big-screen graphics that fill the floor." },
-  { name: "Racing Games",      img: racing,     desc: "Twin-seat racing simulators with curved screens and force-feedback wheels." },
+  { name: "Racing Games",      img: racingAsset.url, desc: "Twin-seat racing simulators with curved screens and force-feedback wheels." },
   { name: "Boxing Machines",   img: boxing,     desc: "Punch-power cabinets with digital scoring — the loudest fun in the room." },
   { name: "Kiddie Rides",      img: kiddie,     desc: "Family-friendly rides that quietly turn dwell time into delight." },
 ];

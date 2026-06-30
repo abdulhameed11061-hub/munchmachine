@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, ArrowRight } from "lucide-react";
+import logoAsset from "@/assets/uploads/logo-main.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home", short: "Home" },
@@ -42,10 +43,9 @@ export function SiteNav() {
               scrolled ? "glass shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)] py-2" : "py-2.5 glass/0"
             } ${scrolled ? "" : "border border-transparent"}`}
           >
-            <Link to="/" className="flex items-center gap-2.5 group min-w-0" aria-label="Munch Machine Vending home">
-              <div className="relative grid place-items-center w-9 h-9 rounded-xl bg-[var(--gradient-primary)] text-primary-foreground font-display font-extrabold shrink-0">
-                M
-                <span className="absolute inset-0 rounded-xl bg-primary/40 blur-lg opacity-50 group-hover:opacity-100 transition" />
+            <Link to="/" className="flex items-center gap-3 group min-w-0" aria-label="Munch Machine Vending home">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden border border-border bg-surface shrink-0 shadow-[var(--shadow-soft)]">
+                <img src={logoAsset.url} alt="Munch Machine Vending Ltd logo" width={80} height={80} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="flex flex-col leading-none min-w-0">
                 <span className="font-display font-extrabold tracking-tight text-[14px] truncate">Munch Machine</span>

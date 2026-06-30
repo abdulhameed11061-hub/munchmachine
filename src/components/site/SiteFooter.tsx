@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Linkedin, Instagram, Facebook, ArrowRight } from "lucide-react";
+import logoAsset from "@/assets/uploads/logo-main.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -21,7 +22,9 @@ export function SiteFooter() {
         <div className="grid gap-14 lg:grid-cols-[1.6fr_1fr_1fr_1.1fr]">
           <div>
             <Link to="/" className="flex items-center gap-4">
-              <div className="grid place-items-center w-14 h-14 rounded-2xl bg-[var(--gradient-primary)] text-primary-foreground font-display font-extrabold text-xl shadow-[var(--shadow-glow)]">M</div>
+              <div className="w-14 h-14 rounded-full overflow-hidden border border-border bg-surface shadow-[var(--shadow-soft)] shrink-0">
+                <img src={logoAsset.url} alt="Munch Machine Vending Ltd logo" width={112} height={112} className="w-full h-full object-cover" />
+              </div>
               <div className="flex flex-col leading-tight">
                 <span className="font-display font-extrabold text-xl">Munch Machine</span>
                 <span className="text-[10px] tracking-[0.32em] text-muted-foreground uppercase">Vending Ltd · Est. London</span>
