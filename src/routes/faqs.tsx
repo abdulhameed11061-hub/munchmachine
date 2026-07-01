@@ -38,7 +38,7 @@ const faqs = [
   { q: "Who restocks the machine?", a: "We do. As part of our fully managed service, our team curates the range, monitors stock and refills on a schedule that matches your demand." },
   { q: "What happens if a machine breaks?", a: "Report it once and we respond fast — typically same-day across London and Essex, with engineers on-site within hours where possible." },
   { q: "Can you offer healthier ranges?", a: "Absolutely. We can build healthier-only, balanced or category-specific ranges including protein, low-sugar, vegan and gluten-free options." },
-  { q: "Do you supply entertainment machines too?", a: "Yes — air hockey, basketball, foosball, arcade cabinets, claw and prize machines. Often supplied alongside vending for hotels, student accommodation and leisure venues." },
+  { q: "Do you supply entertainment machines too?", a: "Yes — air hockey, basketball, football tables, arcade cabinets, claw and prize machines. Often supplied alongside vending for hotels, student accommodation and leisure venues." },
   { q: "How long does installation take?", a: "Most single-machine installs are completed within a couple of hours, including testing and a handover with your team." },
 ];
 

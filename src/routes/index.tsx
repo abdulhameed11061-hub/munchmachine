@@ -475,6 +475,91 @@ function Testimonials() {
   );
 }
 
+/* ──────────────── COFFEE ──────────────── */
+function Coffee() {
+  return (
+    <section className="py-20 lg:py-24 bg-surface/40 border-y border-border">
+      <div className="container-x grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="media-zoom relative aspect-[4/3] rounded-3xl overflow-hidden border border-border order-2 lg:order-1">
+          <img src={coffeeImg} alt="Fresh bean-to-cup coffee machine in a workplace" loading="lazy" width={1280} height={960} className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-background/40 via-transparent to-transparent" />
+        </div>
+        <div className="order-1 lg:order-2">
+          <SectionHeader
+            kicker="Fresh Bean-to-Cup Coffee"
+            title={<>Barista-grade coffee, <span className="text-accent">on demand.</span></>}
+            intro="We provide fresh bean-to-cup coffee machines with quality coffee beans, regular restocking, servicing and maintenance — everything handled by one local team."
+          />
+          <ul className="mt-8 grid sm:grid-cols-2 gap-3">
+            {[
+              "Fresh whole beans supplied & restocked",
+              "Automatic milk & syrup options",
+              "Cashless & contactless payments",
+              "Servicing, cleaning & repairs included",
+            ].map((f) => (
+              <li key={f} className="flex gap-2.5 text-sm p-4 rounded-2xl border border-border bg-surface">
+                <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" aria-hidden="true" /><span>{f}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link to="/contact" className="btn-primary">Get a Free Quote <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
+            <Link to="/contact" className="btn-ghost">Book a Free Site Survey</Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────── QUALIFY ──────────────── */
+function Qualify() {
+  const points = [
+    { icon: BadgePoundSterling, t: "No Upfront Cost", d: "Zero capital outlay for qualifying commercial sites." },
+    { icon: Trophy, t: "Free Installation", d: "Delivered, sited and tested by our engineers." },
+    { icon: MapPin, t: "Free Site Survey", d: "We visit, measure up and design the right setup." },
+  ];
+  return (
+    <section className="py-20 lg:py-24">
+      <div className="container-x">
+        <div className="relative overflow-hidden rounded-[2rem] border border-border bg-surface p-10 md:p-14">
+          <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-primary/15 blur-[140px]" aria-hidden="true" />
+          <div className="relative grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+            <div>
+              <span className="kicker">Who qualifies</span>
+              <h2 className="mt-4 text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.05]">
+                Free machines for the <span className="text-accent">right sites.</span>
+              </h2>
+              <p className="mt-5 text-muted-foreground max-w-xl leading-relaxed">
+                Free installation and no upfront cost are available for qualifying commercial
+                locations across London &amp; Essex, subject to site suitability and expected usage.
+                Hotels, gyms, offices, warehouses, student accommodation, construction sites,
+                hospitals, schools, retail and factories all typically qualify.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link to="/contact" className="btn-primary">Book a Free Site Survey <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
+              </div>
+            </div>
+            <ul className="grid gap-3">
+              {points.map((p) => (
+                <li key={p.t} className="flex gap-4 p-5 rounded-2xl border border-border bg-surface-elevated">
+                  <div className="w-11 h-11 shrink-0 rounded-xl grid place-items-center bg-primary/10 border border-primary/20 text-primary">
+                    <p.icon className="w-5 h-5" aria-hidden="true" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-base font-extrabold">{p.t}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{p.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ──────────────── CTA ──────────────── */
 function CTA() {
   return (

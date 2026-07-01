@@ -2,10 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero, PhotoPlaceholder } from "@/components/site/PageShell";
 import hotelImg from "@/assets/industry-hotel.jpg";
 import officeImg from "@/assets/industry-office.jpg";
-import gymImg from "@/assets/industry-gym.jpg";
+import gymAsset from "@/assets/uploads/gym-modern.png.asset.json";
 import studentImg from "@/assets/industry-student.jpg";
 import warehouseImg from "@/assets/industry-warehouse.jpg";
-import constructionImg from "@/assets/industry-construction.jpg";
+import constructionAsset from "@/assets/uploads/construction-welfare.png.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -25,10 +25,10 @@ function Page() {
   const photos = [
     { src: hotelImg, label: "Luxury hotel lobby install" },
     { src: officeImg, label: "Corporate break area" },
-    { src: gymImg, label: "Boutique gym environment" },
+    { src: gymAsset.url, label: "Boutique gym environment" },
     { src: studentImg, label: "Student common room" },
     { src: warehouseImg, label: "Warehouse welfare zone" },
-    { src: constructionImg, label: "Construction site cabin" },
+    { src: constructionAsset.url, label: "Construction site welfare unit" },
   ];
   const placeholders = [
     "Small snack vending machine — close up",
@@ -37,9 +37,11 @@ function Page() {
     "Bean-to-cup coffee machine",
     "Commercial LED air hockey table",
     "Arcade basketball cabinet",
-    "Tournament foosball table",
+    "Tournament football table",
+    "Boxing arcade machine",
+    "Racing simulator cabinet",
     "Multi-game arcade cabinet",
-    "Branded claw machine",
+    "Branded claw / grab machine",
   ];
 
   return (
