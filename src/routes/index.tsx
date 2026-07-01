@@ -157,7 +157,7 @@ function Services() {
     { icon: Cookie, title: "Snack Vending", text: "Curated, rotated selections that keep teams satisfied without lifting a finger." },
     { icon: CupSoda, title: "Drink Vending", text: "Chilled drinks, healthy options and brand favourites — restocked on schedule." },
     { icon: Coffee, title: "Coffee Solutions", text: "Bean-to-cup machines that bring barista-grade coffee to your workplace." },
-    { icon: Gamepad2, title: "Sports & Entertainment", text: "Air hockey, foosball, basketball and arcade — installed for impact." },
+    { icon: Gamepad2, title: "Sports & Entertainment", text: "Air hockey, football tables, basketball, boxing, racing and arcade — installed for impact." },
     { icon: Wrench, title: "Fully Managed Service", text: "Stocking, cleaning, servicing and 24/7 support — all included." },
     { icon: CreditCard, title: "Cashless Payments", text: "Contactless, card and mobile payments fitted as standard." },
   ];
@@ -325,12 +325,12 @@ function WhyUs() {
 /* ──────────────── ENTERTAINMENT ──────────────── */
 function Entertainment() {
   const items = [
-    { title: "Air Hockey",        img: airHockeyImg,  desc: "Tournament-grade LED tables that magnetise a room." },
-    { title: "Basketball Arcade", img: basketballImg, desc: "Commercial hoops with electronic scoring and timers." },
-    { title: "Foosball Tables",   img: foosballImg,   desc: "Tournament-spec tables engineered for non-stop play." },
-    { title: "Arcade Machines",   img: arcadeImg,     desc: "Modern cabinets with 4K screens and premium controls." },
-    { title: "Grab Machines",     img: grabImg,       desc: "Branded prize cabinets that reward engagement." },
-    { title: "Prize Machines",    img: prizeImg,      desc: "Ticket and redemption systems, cashless ready." },
+    { title: "Air Hockey",        img: airHockeyAsset.url,  desc: "Tournament-grade LED tables that magnetise a room." },
+    { title: "Basketball Arcade", img: basketballImg,       desc: "Commercial hoops with electronic scoring and timers." },
+    { title: "Football Tables",   img: footballImg,         desc: "Tournament-spec tables engineered for non-stop play." },
+    { title: "Boxing Machines",   img: boxingAsset.url,     desc: "Punch-power cabinets with digital scoring — the loudest fun in the room." },
+    { title: "Racing Machines",   img: racingAsset.url,     desc: "Twin-seat simulators with curved screens and force-feedback wheels." },
+    { title: "Arcade & Grab",     img: arcadeImg,           desc: "Modern arcade cabinets and branded grab machines, cashless ready." },
   ];
   return (
     <section className="relative py-28 lg:py-36 bg-surface/40 border-y border-border overflow-hidden">
@@ -368,11 +368,11 @@ function Entertainment() {
 function Industries() {
   const list = [
     { name: "Hotels", img: hotelAsset.url, copy: "Guest-ready 24/7 with premium snack and drink selections." },
-    { name: "Gyms", img: gymImg, copy: "Protein bars, isotonics and recovery essentials, on-tap." },
+    { name: "Gyms", img: gymAsset.url, copy: "Protein bars, isotonics and recovery essentials, on-tap." },
     { name: "Offices", img: officeAsset.url, copy: "Bean-to-cup coffee and balanced snacks that boost focus." },
     { name: "Warehouses", img: warehouseImg, copy: "Rugged kit for heavy-traffic break areas." },
     { name: "Student Accommodation", img: studentAsset.url, copy: "Late-night fuel with cashless convenience." },
-    { name: "Construction Sites", img: constructionImg, copy: "Site-tough machines designed for fast turnaround." },
+    { name: "Construction Sites", img: constructionAsset.url, copy: "Site-tough machines designed for fast turnaround." },
   ];
   return (
     <section className="py-24 lg:py-32">
