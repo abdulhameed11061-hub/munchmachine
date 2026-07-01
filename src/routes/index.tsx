@@ -476,7 +476,7 @@ function Testimonials() {
 }
 
 /* ──────────────── COFFEE ──────────────── */
-function Coffee() {
+function CoffeeSection() {
   return (
     <section className="py-20 lg:py-24 bg-surface/40 border-y border-border">
       <div className="container-x grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
