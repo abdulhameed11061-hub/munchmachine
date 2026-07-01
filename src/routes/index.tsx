@@ -45,11 +45,13 @@ function HomePage() {
       <Hero />
       <TrustStrip />
       <Services />
+      <Coffee />
       <MachineRange />
       <WhyUs />
       <Entertainment />
       <Industries />
       <HowItWorks />
+      <Qualify />
       <Testimonials />
       <CTA />
     </PageShell>
