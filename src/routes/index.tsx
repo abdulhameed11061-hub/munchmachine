@@ -86,8 +86,8 @@ function Hero() {
             className="mt-6 font-display text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem] leading-[0.96] tracking-tight animate-fade-up"
             style={{ animationDelay: "120ms" }}
           >
-            Workplace fuel,<br />
-            <span className="text-gradient">cinematically</span> delivered.
+            Premium Vending &<br />
+            Entertainment Solutions.
           </h1>
           <p
             className="mt-8 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
@@ -95,7 +95,7 @@ function Hero() {
           >
             Premium vending, bean-to-cup coffee and interactive entertainment —
             installed, stocked and maintained for the businesses London &amp; Essex
-            care most about.
+            care most about.&nbsp;At no cost to qualifying businesses.
           </p>
           <div
             className="mt-10 flex flex-wrap gap-3 animate-fade-up"
