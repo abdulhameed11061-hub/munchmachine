@@ -5,21 +5,23 @@ import {
   Gamepad2, Trophy, Sparkles, MapPin, Phone, Quote, Star,
 } from "lucide-react";
 import heroImg from "@/assets/hero-cinematic.jpg";
-import gymImg from "@/assets/industry-gym.jpg";
+import gymAsset from "@/assets/uploads/gym-modern.png.asset.json";
 import hotelAsset from "@/assets/uploads/hotel.png.asset.json";
 import officeAsset from "@/assets/uploads/office.png.asset.json";
 import warehouseImg from "@/assets/industry-warehouse.jpg";
 import studentAsset from "@/assets/uploads/student-accommodation.png.asset.json";
-import constructionImg from "@/assets/industry-construction.jpg";
+import constructionAsset from "@/assets/uploads/construction-welfare.png.asset.json";
 import smallAsset from "@/assets/uploads/small.png.asset.json";
 import mediumAsset from "@/assets/uploads/medium.png.asset.json";
 import largeAsset from "@/assets/uploads/large.png.asset.json";
-import airHockeyImg from "@/assets/ent-air-hockey.jpg";
+import coffeeImg from "@/assets/machine-coffee.jpg";
+import airHockeyAsset from "@/assets/uploads/air-hockey-neon.jpg.asset.json";
 import basketballImg from "@/assets/ent-basketball.jpg";
-import foosballImg from "@/assets/ent-foosball.jpg";
+import footballImg from "@/assets/ent-foosball.jpg";
 import arcadeImg from "@/assets/ent-arcade.jpg";
 import grabImg from "@/assets/ent-grab.jpg";
-import prizeImg from "@/assets/ent-prize.jpg";
+import boxingAsset from "@/assets/uploads/boxing-arcade.png.asset.json";
+import racingAsset from "@/assets/uploads/racing-simulator-03.jpg.asset.json";
 import { PageShell, SectionHeader } from "@/components/site/PageShell";
 
 
@@ -93,9 +95,9 @@ function Hero() {
             className="mt-8 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
             style={{ animationDelay: "220ms" }}
           >
-            Premium vending, bean-to-cup coffee and interactive entertainment —
-            installed, stocked and maintained for the businesses London &amp; Essex
-            care most about.&nbsp;At no cost to qualifying businesses.
+            We supply, install, restock and maintain premium vending machines, fresh
+            bean-to-cup coffee machines and entertainment equipment for businesses across
+            London &amp; Essex.
           </p>
           <div
             className="mt-10 flex flex-wrap gap-3 animate-fade-up"
