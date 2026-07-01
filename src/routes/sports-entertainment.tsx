@@ -3,7 +3,7 @@ import { ArrowRight, Trophy, Gamepad2, Target } from "lucide-react";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import airHockey from "@/assets/ent-air-hockey.jpg";
 import basketball from "@/assets/ent-basketball.jpg";
-import foosball from "@/assets/ent-foosball.jpg";
+import football from "@/assets/ent-foosball.jpg";
 import arcade from "@/assets/ent-arcade.jpg";
 import grab from "@/assets/ent-grab.jpg";
 import prize from "@/assets/ent-prize.jpg";
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/sports-entertainment")({
   head: () => ({
     meta: [
       { title: "Interactive Entertainment Solutions | Munch Machine Vending" },
-      { name: "description", content: "Premium interactive entertainment for hotels, gyms, sites and venues — air hockey, basketball, foosball, arcade, claw, racing, dance, boxing, prize machines and kiddie rides." },
+      { name: "description", content: "Premium interactive entertainment for hotels, gyms, sites and venues — air hockey, basketball, football tables, arcade, claw, racing, dance, boxing, prize machines and kiddie rides." },
       { property: "og:title", content: "Interactive Entertainment Solutions | Munch Machine" },
       { property: "og:description", content: "Commercial-grade entertainment that transforms common rooms, lobbies and break areas." },
       { property: "og:url", content: "/sports-entertainment" },
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/sports-entertainment")({
 const items = [
   { name: "Air Hockey",        img: airHockey,  desc: "Tournament-grade LED tables that magnetise a room and never sit unused." },
   { name: "Basketball Arcade", img: basketball, desc: "Commercial hoops with electronic scoring — the room's most reliable conversation starter." },
-  { name: "Foosball Tables",   img: foosball,   desc: "Heavy, tournament-spec tables engineered for ten thousand hours of play." },
+  { name: "Football Tables",   img: football,   desc: "Heavy, tournament-spec tables engineered for ten thousand hours of play." },
   { name: "Arcade Machines",   img: arcade,     desc: "Modern multi-game cabinets with 4K displays and premium controls." },
   { name: "Grab Machines",     img: grab,       desc: "Branded prize cabinets with adjustable grip — engagement, packaged." },
   { name: "Prize Machines",    img: prize,      desc: "Ticket and redemption systems built for arcades, parks and leisure venues." },

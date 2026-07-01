@@ -45,7 +45,7 @@ function HomePage() {
       <Hero />
       <TrustStrip />
       <Services />
-      <Coffee />
+      <CoffeeSection />
       <MachineRange />
       <WhyUs />
       <Entertainment />
