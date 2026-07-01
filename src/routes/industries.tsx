@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageShell, PageHero } from "@/components/site/PageShell";
-import gymImg from "@/assets/industry-gym.jpg";
+import gymAsset from "@/assets/uploads/gym-modern.png.asset.json";
 import hotelAsset from "@/assets/uploads/hotel.png.asset.json";
 import officeAsset from "@/assets/uploads/office.png.asset.json";
 import warehouseImg from "@/assets/industry-warehouse.jpg";
 import studentAsset from "@/assets/uploads/student-accommodation.png.asset.json";
-import constructionImg from "@/assets/industry-construction.jpg";
+import constructionAsset from "@/assets/uploads/construction-welfare.png.asset.json";
 import hospitalAsset from "@/assets/uploads/hospital.png.asset.json";
 import schoolAsset from "@/assets/uploads/school.png.asset.json";
 import retailImg from "@/assets/industry-retail.jpg";
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
       { title: "Industries We Serve | Munch Machine Vending" },
-      { name: "description", content: "Premium vending and interactive entertainment for hotels, gyms, offices, warehouses, sites, student accommodation, hospitals, schools, retail and factories." },
+      { name: "description", content: "Premium vending and interactive entertainment for hotels, gyms, offices, warehouses, sites, student accommodation, hospitals, schools, retail and factories across London & Essex." },
       { property: "og:title", content: "Industries | Munch Machine Vending" },
       { property: "og:description", content: "Tailored vending and entertainment for every environment." },
       { property: "og:url", content: "/industries" },
@@ -27,16 +27,16 @@ export const Route = createFileRoute("/industries")({
 });
 
 const industries = [
-  { name: "Gyms",                   img: gymImg,              copy: "Protein, isotonics and recovery essentials, restocked around peak class times." },
-  { name: "Hotels",                 img: hotelAsset.url,      copy: "Guest-ready 24/7 with premium ranges that match your brand standard." },
-  { name: "Offices",                img: officeAsset.url,     copy: "Bean-to-cup coffee and balanced snacks that keep teams focused." },
-  { name: "Warehouses",             img: warehouseImg,        copy: "Rugged kit for heavy-traffic break areas with rapid engineer response." },
-  { name: "Construction Sites",     img: constructionImg,     copy: "Site-tough machines for cabin offices and welfare units, installed fast." },
-  { name: "Student Accommodation",  img: studentAsset.url,    copy: "Late-night fuel and cashless convenience that builds community." },
-  { name: "Hospitals",              img: hospitalAsset.url,   copy: "Reliable, 24/7 service for staff rooms, waiting areas and visitor spaces." },
-  { name: "Schools",                img: schoolAsset.url,     copy: "Healthier ranges and audit-friendly reporting for sixth-form and common areas." },
-  { name: "Retail",                 img: retailImg,           copy: "Brand-aligned ranges and presentation for premium customer spaces." },
-  { name: "Factories",              img: factoryImg,          copy: "Heavy-duty machines built for shift workers and round-the-clock demand." },
+  { name: "Gyms",                   img: gymAsset.url,          copy: "Protein, isotonics and recovery essentials, restocked around peak class times." },
+  { name: "Hotels",                 img: hotelAsset.url,        copy: "Guest-ready 24/7 with premium ranges that match your brand standard." },
+  { name: "Offices",                img: officeAsset.url,       copy: "Bean-to-cup coffee and balanced snacks that keep teams focused." },
+  { name: "Warehouses",             img: warehouseImg,          copy: "Rugged kit for heavy-traffic break areas with rapid engineer response." },
+  { name: "Construction Sites",     img: constructionAsset.url, copy: "Site-tough machines for cabin offices and welfare units, installed fast." },
+  { name: "Student Accommodation",  img: studentAsset.url,      copy: "Late-night fuel and cashless convenience that builds community." },
+  { name: "Hospitals",              img: hospitalAsset.url,     copy: "Reliable, 24/7 service for staff rooms, waiting areas and visitor spaces." },
+  { name: "Schools",                img: schoolAsset.url,       copy: "Healthier ranges and audit-friendly reporting for sixth-form and common areas." },
+  { name: "Retail",                 img: retailImg,             copy: "Brand-aligned ranges and presentation for premium customer spaces." },
+  { name: "Factories",              img: factoryImg,            copy: "Heavy-duty machines built for shift workers and round-the-clock demand." },
 ];
 
 function Page() {

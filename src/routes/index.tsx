@@ -5,21 +5,23 @@ import {
   Gamepad2, Trophy, Sparkles, MapPin, Phone, Quote, Star,
 } from "lucide-react";
 import heroImg from "@/assets/hero-cinematic.jpg";
-import gymImg from "@/assets/industry-gym.jpg";
+import gymAsset from "@/assets/uploads/gym-modern.png.asset.json";
 import hotelAsset from "@/assets/uploads/hotel.png.asset.json";
 import officeAsset from "@/assets/uploads/office.png.asset.json";
 import warehouseImg from "@/assets/industry-warehouse.jpg";
 import studentAsset from "@/assets/uploads/student-accommodation.png.asset.json";
-import constructionImg from "@/assets/industry-construction.jpg";
+import constructionAsset from "@/assets/uploads/construction-welfare.png.asset.json";
 import smallAsset from "@/assets/uploads/small.png.asset.json";
 import mediumAsset from "@/assets/uploads/medium.png.asset.json";
 import largeAsset from "@/assets/uploads/large.png.asset.json";
-import airHockeyImg from "@/assets/ent-air-hockey.jpg";
+import coffeeImg from "@/assets/machine-coffee.jpg";
+import airHockeyAsset from "@/assets/uploads/air-hockey-neon.jpg.asset.json";
 import basketballImg from "@/assets/ent-basketball.jpg";
-import foosballImg from "@/assets/ent-foosball.jpg";
+import footballImg from "@/assets/ent-foosball.jpg";
 import arcadeImg from "@/assets/ent-arcade.jpg";
 import grabImg from "@/assets/ent-grab.jpg";
-import prizeImg from "@/assets/ent-prize.jpg";
+import boxingAsset from "@/assets/uploads/boxing-arcade.png.asset.json";
+import racingAsset from "@/assets/uploads/racing-simulator-03.jpg.asset.json";
 import { PageShell, SectionHeader } from "@/components/site/PageShell";
 
 
@@ -43,11 +45,13 @@ function HomePage() {
       <Hero />
       <TrustStrip />
       <Services />
+      <CoffeeSection />
       <MachineRange />
       <WhyUs />
       <Entertainment />
       <Industries />
       <HowItWorks />
+      <Qualify />
       <Testimonials />
       <CTA />
     </PageShell>
@@ -93,9 +97,9 @@ function Hero() {
             className="mt-8 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
             style={{ animationDelay: "220ms" }}
           >
-            Premium vending, bean-to-cup coffee and interactive entertainment —
-            installed, stocked and maintained for the businesses London &amp; Essex
-            care most about.&nbsp;At no cost to qualifying businesses.
+            We supply, install, restock and maintain premium vending machines, fresh
+            bean-to-cup coffee machines and entertainment equipment for businesses across
+            London &amp; Essex.
           </p>
           <div
             className="mt-10 flex flex-wrap gap-3 animate-fade-up"
@@ -155,7 +159,7 @@ function Services() {
     { icon: Cookie, title: "Snack Vending", text: "Curated, rotated selections that keep teams satisfied without lifting a finger." },
     { icon: CupSoda, title: "Drink Vending", text: "Chilled drinks, healthy options and brand favourites — restocked on schedule." },
     { icon: Coffee, title: "Coffee Solutions", text: "Bean-to-cup machines that bring barista-grade coffee to your workplace." },
-    { icon: Gamepad2, title: "Sports & Entertainment", text: "Air hockey, foosball, basketball and arcade — installed for impact." },
+    { icon: Gamepad2, title: "Sports & Entertainment", text: "Air hockey, football tables, basketball, boxing, racing and arcade — installed for impact." },
     { icon: Wrench, title: "Fully Managed Service", text: "Stocking, cleaning, servicing and 24/7 support — all included." },
     { icon: CreditCard, title: "Cashless Payments", text: "Contactless, card and mobile payments fitted as standard." },
   ];
@@ -323,12 +327,12 @@ function WhyUs() {
 /* ──────────────── ENTERTAINMENT ──────────────── */
 function Entertainment() {
   const items = [
-    { title: "Air Hockey",        img: airHockeyImg,  desc: "Tournament-grade LED tables that magnetise a room." },
-    { title: "Basketball Arcade", img: basketballImg, desc: "Commercial hoops with electronic scoring and timers." },
-    { title: "Foosball Tables",   img: foosballImg,   desc: "Tournament-spec tables engineered for non-stop play." },
-    { title: "Arcade Machines",   img: arcadeImg,     desc: "Modern cabinets with 4K screens and premium controls." },
-    { title: "Grab Machines",     img: grabImg,       desc: "Branded prize cabinets that reward engagement." },
-    { title: "Prize Machines",    img: prizeImg,      desc: "Ticket and redemption systems, cashless ready." },
+    { title: "Air Hockey",        img: airHockeyAsset.url,  desc: "Tournament-grade LED tables that magnetise a room." },
+    { title: "Basketball Arcade", img: basketballImg,       desc: "Commercial hoops with electronic scoring and timers." },
+    { title: "Football Tables",   img: footballImg,         desc: "Tournament-spec tables engineered for non-stop play." },
+    { title: "Boxing Machines",   img: boxingAsset.url,     desc: "Punch-power cabinets with digital scoring — the loudest fun in the room." },
+    { title: "Racing Machines",   img: racingAsset.url,     desc: "Twin-seat simulators with curved screens and force-feedback wheels." },
+    { title: "Arcade & Grab",     img: arcadeImg,           desc: "Modern arcade cabinets and branded grab machines, cashless ready." },
   ];
   return (
     <section className="relative py-28 lg:py-36 bg-surface/40 border-y border-border overflow-hidden">
@@ -366,11 +370,11 @@ function Entertainment() {
 function Industries() {
   const list = [
     { name: "Hotels", img: hotelAsset.url, copy: "Guest-ready 24/7 with premium snack and drink selections." },
-    { name: "Gyms", img: gymImg, copy: "Protein bars, isotonics and recovery essentials, on-tap." },
+    { name: "Gyms", img: gymAsset.url, copy: "Protein bars, isotonics and recovery essentials, on-tap." },
     { name: "Offices", img: officeAsset.url, copy: "Bean-to-cup coffee and balanced snacks that boost focus." },
     { name: "Warehouses", img: warehouseImg, copy: "Rugged kit for heavy-traffic break areas." },
     { name: "Student Accommodation", img: studentAsset.url, copy: "Late-night fuel with cashless convenience." },
-    { name: "Construction Sites", img: constructionImg, copy: "Site-tough machines designed for fast turnaround." },
+    { name: "Construction Sites", img: constructionAsset.url, copy: "Site-tough machines designed for fast turnaround." },
   ];
   return (
     <section className="py-24 lg:py-32">
@@ -465,6 +469,91 @@ function Testimonials() {
               </figcaption>
             </figure>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────── COFFEE ──────────────── */
+function CoffeeSection() {
+  return (
+    <section className="py-20 lg:py-24 bg-surface/40 border-y border-border">
+      <div className="container-x grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="media-zoom relative aspect-[4/3] rounded-3xl overflow-hidden border border-border order-2 lg:order-1">
+          <img src={coffeeImg} alt="Fresh bean-to-cup coffee machine in a workplace" loading="lazy" width={1280} height={960} className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-background/40 via-transparent to-transparent" />
+        </div>
+        <div className="order-1 lg:order-2">
+          <SectionHeader
+            kicker="Fresh Bean-to-Cup Coffee"
+            title={<>Barista-grade coffee, <span className="text-accent">on demand.</span></>}
+            intro="We provide fresh bean-to-cup coffee machines with quality coffee beans, regular restocking, servicing and maintenance — everything handled by one local team."
+          />
+          <ul className="mt-8 grid sm:grid-cols-2 gap-3">
+            {[
+              "Fresh whole beans supplied & restocked",
+              "Automatic milk & syrup options",
+              "Cashless & contactless payments",
+              "Servicing, cleaning & repairs included",
+            ].map((f) => (
+              <li key={f} className="flex gap-2.5 text-sm p-4 rounded-2xl border border-border bg-surface">
+                <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" aria-hidden="true" /><span>{f}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link to="/contact" className="btn-primary">Get a Free Quote <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
+            <Link to="/contact" className="btn-ghost">Book a Free Site Survey</Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────── QUALIFY ──────────────── */
+function Qualify() {
+  const points = [
+    { icon: BadgePoundSterling, t: "No Upfront Cost", d: "Zero capital outlay for qualifying commercial sites." },
+    { icon: Trophy, t: "Free Installation", d: "Delivered, sited and tested by our engineers." },
+    { icon: MapPin, t: "Free Site Survey", d: "We visit, measure up and design the right setup." },
+  ];
+  return (
+    <section className="py-20 lg:py-24">
+      <div className="container-x">
+        <div className="relative overflow-hidden rounded-[2rem] border border-border bg-surface p-10 md:p-14">
+          <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-primary/15 blur-[140px]" aria-hidden="true" />
+          <div className="relative grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+            <div>
+              <span className="kicker">Who qualifies</span>
+              <h2 className="mt-4 text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.05]">
+                Free machines for the <span className="text-accent">right sites.</span>
+              </h2>
+              <p className="mt-5 text-muted-foreground max-w-xl leading-relaxed">
+                Free installation and no upfront cost are available for qualifying commercial
+                locations across London &amp; Essex, subject to site suitability and expected usage.
+                Hotels, gyms, offices, warehouses, student accommodation, construction sites,
+                hospitals, schools, retail and factories all typically qualify.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link to="/contact" className="btn-primary">Book a Free Site Survey <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
+              </div>
+            </div>
+            <ul className="grid gap-3">
+              {points.map((p) => (
+                <li key={p.t} className="flex gap-4 p-5 rounded-2xl border border-border bg-surface-elevated">
+                  <div className="w-11 h-11 shrink-0 rounded-xl grid place-items-center bg-primary/10 border border-primary/20 text-primary">
+                    <p.icon className="w-5 h-5" aria-hidden="true" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-base font-extrabold">{p.t}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{p.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
