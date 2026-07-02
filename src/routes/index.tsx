@@ -8,7 +8,7 @@ import heroImg from "@/assets/hero-cinematic.jpg";
 import gymAsset from "@/assets/uploads/gym-modern.png.asset.json";
 import hotelAsset from "@/assets/uploads/hotel.png.asset.json";
 import officeAsset from "@/assets/uploads/office.png.asset.json";
-import warehouseImg from "@/assets/industry-warehouse.jpg";
+import warehouseAsset from "@/assets/uploads/warehouse-welfare.jpg.asset.json";
 import studentAsset from "@/assets/uploads/student-accommodation.png.asset.json";
 import constructionAsset from "@/assets/uploads/construction-welfare.png.asset.json";
 import smallAsset from "@/assets/uploads/small.png.asset.json";
@@ -84,14 +84,14 @@ function Hero() {
       <div className="container-x relative pb-28 lg:pb-32 pt-40 w-full">
         <div className="max-w-5xl">
           <span className="inline-flex items-center gap-3 text-[11px] tracking-[0.32em] uppercase text-primary font-semibold animate-fade-up">
-            <span className="w-10 h-px bg-primary" /> London &amp; Essex · Est. since day one
+            <span className="w-10 h-px bg-primary" /> Serving London &amp; Essex
           </span>
           <h1
             className="mt-6 font-display text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem] leading-[0.96] tracking-tight animate-fade-up"
             style={{ animationDelay: "120ms" }}
           >
-            Workplace fuel,<br />
-            cinematically delivered Raheela
+            Premium Vending &<br />
+            Entertainment Solutions
           </h1>
           <p
             className="mt-8 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
@@ -343,7 +343,7 @@ function Entertainment() {
             kicker="Interactive Entertainment Solutions"
             title={<>Turn dwell time into <span className="text-accent">delight.</span></>}
           />
-          <Link to="/sports-entertainment" className="btn-ghost shrink-0">Explore all 10 <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
+          <Link to="/sports-entertainment" className="btn-ghost shrink-0">Explore entertainment machines <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((g) => (
@@ -372,34 +372,43 @@ function Industries() {
     { name: "Hotels", img: hotelAsset.url, copy: "Guest-ready 24/7 with premium snack and drink selections." },
     { name: "Gyms", img: gymAsset.url, copy: "Protein bars, isotonics and recovery essentials, on-tap." },
     { name: "Offices", img: officeAsset.url, copy: "Bean-to-cup coffee and balanced snacks that boost focus." },
-    { name: "Warehouses", img: warehouseImg, copy: "Rugged kit for heavy-traffic break areas." },
+    { name: "Warehouses", img: warehouseAsset.url, copy: "Welfare-room ready — rugged kit for heavy-traffic break areas." },
     { name: "Student Accommodation", img: studentAsset.url, copy: "Late-night fuel with cashless convenience." },
-    { name: "Construction Sites", img: constructionAsset.url, copy: "Site-tough machines designed for fast turnaround." },
+    { name: "Construction Sites", img: constructionAsset.url, copy: "Welfare-cabin machines designed for fast turnaround." },
   ];
   return (
-    <section className="py-24 lg:py-32">
+    <section id="industries" className="py-24 lg:py-32 scroll-mt-24">
       <div className="container-x">
         <SectionHeader
           kicker="Industries"
           title={<>Built for <span className="text-accent">every environment.</span></>}
-          intro="From boutique hotels to busy construction sites — we tailor the machine, the range and the schedule to the people using it."
+          intro="We provide fully managed vending machines, coffee machines and entertainment equipment for gyms, hotels, offices, warehouses, construction sites, schools, hospitals, retail locations and student accommodation across London & Essex."
         />
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {list.map((i) => (
-            <article key={i.name} className="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-border">
+            <article key={i.name} className="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-surface">
               <img
                 src={i.img}
-                alt={`${i.name} environment`}
+                alt={`${i.name} environment with premium vending`}
                 loading="lazy"
+                decoding="async"
+                width={1280}
+                height={1600}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <h3 className="font-display text-xl font-extrabold">{i.name}</h3>
                 <p className="mt-2 text-sm text-muted-foreground max-w-[18rem]">{i.copy}</p>
+                <Link to="/contact" className="btn-primary mt-4 text-xs px-4 py-2">
+                  Get a Free Quote <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
               </div>
             </article>
           ))}
+        </div>
+        <div className="mt-10 flex justify-center">
+          <Link to="/industries" className="btn-ghost">See all industries <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
         </div>
       </div>
     </section>
