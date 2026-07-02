@@ -90,8 +90,8 @@ function Hero() {
             className="mt-6 font-display text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem] leading-[0.96] tracking-tight animate-fade-up"
             style={{ animationDelay: "120ms" }}
           >
-            Premium Vending &<br />
-            Entertainment Solutions.
+            Workplace fuel,<br />
+            cinematically delivered Raheela
           </h1>
           <p
             className="mt-8 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
