@@ -6,8 +6,8 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-cinematic.jpg";
 import gymAsset from "@/assets/uploads/gym-modern.png.asset.json";
-import hotelAsset from "@/assets/uploads/hotel.png.asset.json";
-import officeAsset from "@/assets/uploads/office.png.asset.json";
+import hotelAsset from "@/assets/uploads/gallery-hotel-lobby-vending.png.asset.json";
+import officeAsset from "@/assets/uploads/gallery-corporate-break-area.png.asset.json";
 import warehouseAsset from "@/assets/uploads/warehouse-welfare.jpg.asset.json";
 import studentAsset from "@/assets/uploads/student-accommodation.png.asset.json";
 import constructionAsset from "@/assets/uploads/construction-welfare.png.asset.json";
