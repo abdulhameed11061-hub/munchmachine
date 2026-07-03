@@ -87,7 +87,7 @@ function Hero() {
             <span className="w-10 h-px bg-primary" /> Serving London &amp; Essex
           </span>
           <h1
-            className="mt-6 font-display text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem] leading-[0.96] tracking-tight animate-fade-up"
+            className="mt-6 font-display text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem] leading-[0.96] tracking-tight animate-fade-up text-accent"
             style={{ animationDelay: "120ms" }}
           >
             Premium Vending &<br />
