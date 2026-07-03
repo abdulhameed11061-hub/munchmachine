@@ -5,13 +5,27 @@ import { PageShell, PageHero } from "@/components/site/PageShell";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Munch Machine Vending Ltd" },
-      { name: "description", content: "Munch Machine Vending Ltd supplies, installs and maintains premium vending and entertainment machines across London and Essex." },
-      { property: "og:title", content: "About | Munch Machine Vending" },
-      { property: "og:description", content: "A fully managed vending and entertainment partner for London and Essex businesses." },
-      { property: "og:url", content: "/about" },
+      { title: "About Munch Machine Vending Ltd | London & Essex Vending Company" },
+      { name: "description", content: "Munch Machine Vending Ltd is a London & Essex commercial vending, coffee and entertainment machine specialist — supplying, installing and fully managing every site we serve." },
+      { property: "og:title", content: "About Munch Machine Vending Ltd | London & Essex" },
+      { property: "og:description", content: "A fully managed vending, coffee and entertainment partner for London & Essex businesses." },
+      { property: "og:url", content: "https://munchmachine.lovable.app/about" },
+      { property: "og:image", content: "https://munchmachine.lovable.app/og-about.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://munchmachine.lovable.app/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://munchmachine.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "About", item: "https://munchmachine.lovable.app/about" },
+          ],
+        }),
+      },
+    ],
   }),
   component: Page,
 });

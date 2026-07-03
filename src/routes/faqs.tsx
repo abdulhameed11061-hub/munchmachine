@@ -6,13 +6,14 @@ import { PageShell, PageHero } from "@/components/site/PageShell";
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
-      { title: "FAQs | Munch Machine Vending" },
-      { name: "description", content: "Frequently asked questions about vending machine installation, costs, payments, maintenance and managed service from Munch Machine Vending." },
-      { property: "og:title", content: "FAQs | Munch Machine Vending" },
-      { property: "og:description", content: "Answers to common questions about our vending and entertainment service." },
-      { property: "og:url", content: "/faqs" },
+      { title: "Vending Machine FAQs | London & Essex | Munch Machine Vending" },
+      { name: "description", content: "Answers to common questions about vending machine installation, costs, payments, maintenance and our fully managed service across London & Essex." },
+      { property: "og:title", content: "Vending Machine FAQs | London & Essex" },
+      { property: "og:description", content: "Answers to common questions about our vending, coffee and entertainment service in London & Essex." },
+      { property: "og:url", content: "https://munchmachine.lovable.app/faqs" },
+      { property: "og:image", content: "https://munchmachine.lovable.app/og-faqs.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/faqs" }],
+    links: [{ rel: "canonical", href: "https://munchmachine.lovable.app/faqs" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -24,6 +25,17 @@ export const Route = createFileRoute("/faqs")({
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://munchmachine.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "FAQs", item: "https://munchmachine.lovable.app/faqs" },
+          ],
         }),
       },
     ],

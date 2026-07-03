@@ -17,13 +17,27 @@ import factoryImg from "@/assets/industry-factory.jpg";
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries We Serve | Munch Machine Vending" },
-      { name: "description", content: "Premium vending and interactive entertainment for hotels, gyms, offices, warehouses, sites, student accommodation, hospitals, schools, retail and factories across London & Essex." },
-      { property: "og:title", content: "Industries | Munch Machine Vending" },
-      { property: "og:description", content: "Tailored vending and entertainment for every environment." },
-      { property: "og:url", content: "/industries" },
+      { title: "Industries We Serve in London & Essex | Munch Machine Vending" },
+      { name: "description", content: "Vending, coffee and interactive entertainment machines for offices, hotels, hospitals, schools, universities, warehouses, construction sites, gyms, leisure centres, retail and factories across London & Essex." },
+      { property: "og:title", content: "Industries We Serve | London & Essex | Munch Machine Vending" },
+      { property: "og:description", content: "Tailored vending, coffee and entertainment for every environment in London & Essex." },
+      { property: "og:url", content: "https://munchmachine.lovable.app/industries" },
+      { property: "og:image", content: "https://munchmachine.lovable.app/og-industries.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/industries" }],
+    links: [{ rel: "canonical", href: "https://munchmachine.lovable.app/industries" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://munchmachine.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Industries", item: "https://munchmachine.lovable.app/industries" },
+          ],
+        }),
+      },
+    ],
   }),
   component: Page,
 });

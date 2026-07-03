@@ -6,13 +6,14 @@ import { PageShell, PageHero } from "@/components/site/PageShell";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact | Munch Machine Vending" },
-      { name: "description", content: "Get a free vending or entertainment machine quote. Call +44 7944 947419 or email munchmachinevending.ltd@yahoo.com. We reply within one working day." },
-      { property: "og:title", content: "Contact | Munch Machine Vending" },
-      { property: "og:description", content: "Talk to our team about a free site survey and quote." },
-      { property: "og:url", content: "/contact" },
+      { title: "Contact Munch Machine Vending | Vending Machines London & Essex" },
+      { name: "description", content: "Free vending, coffee or entertainment machine quote across London & Essex. Call +44 7944 947419 or email munchmachinevending.ltd@yahoo.com — reply within one working day." },
+      { property: "og:title", content: "Contact Munch Machine Vending | London & Essex" },
+      { property: "og:description", content: "Talk to our London & Essex team about a free site survey and quote." },
+      { property: "og:url", content: "https://munchmachine.lovable.app/contact" },
+      { property: "og:image", content: "https://munchmachine.lovable.app/og-contact.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://munchmachine.lovable.app/contact" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -20,6 +21,7 @@ export const Route = createFileRoute("/contact")({
           "@context": "https://schema.org",
           "@type": "ContactPage",
           name: "Contact Munch Machine Vending Ltd",
+          url: "https://munchmachine.lovable.app/contact",
           mainEntity: {
             "@type": "LocalBusiness",
             name: "Munch Machine Vending Ltd",
@@ -34,6 +36,17 @@ export const Route = createFileRoute("/contact")({
               availableLanguage: "English",
             },
           },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://munchmachine.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Contact", item: "https://munchmachine.lovable.app/contact" },
+          ],
         }),
       },
     ],

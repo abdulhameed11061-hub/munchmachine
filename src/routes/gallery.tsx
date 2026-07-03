@@ -22,13 +22,27 @@ import grabAsset from "@/assets/uploads/gallery-prize-grab-machine.jpg";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery | Munch Machine Vending" },
-      { name: "description", content: "Installations, environments and equipment from Munch Machine Vending — vending, coffee and entertainment machines across London and Essex." },
-      { property: "og:title", content: "Gallery | Munch Machine Vending" },
-      { property: "og:description", content: "A look at our installations, environments and available equipment." },
-      { property: "og:url", content: "/gallery" },
+      { title: "Machine Gallery | Vending, Coffee & Entertainment | London & Essex" },
+      { name: "description", content: "See our vending machines, bean-to-cup coffee machines and interactive entertainment machines installed across London and Essex hotels, offices, gyms and sites." },
+      { property: "og:title", content: "Machine Gallery | Munch Machine Vending London & Essex" },
+      { property: "og:description", content: "Installations and equipment from Munch Machine Vending across London & Essex." },
+      { property: "og:url", content: "https://munchmachine.lovable.app/gallery" },
+      { property: "og:image", content: "https://munchmachine.lovable.app/og-gallery.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/gallery" }],
+    links: [{ rel: "canonical", href: "https://munchmachine.lovable.app/gallery" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://munchmachine.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Gallery", item: "https://munchmachine.lovable.app/gallery" },
+          ],
+        }),
+      },
+    ],
   }),
   component: Page,
 });
