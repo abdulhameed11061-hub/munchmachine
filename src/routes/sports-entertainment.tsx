@@ -15,13 +15,27 @@ import kiddie from "@/assets/ent-kiddie.jpg";
 export const Route = createFileRoute("/sports-entertainment")({
   head: () => ({
     meta: [
-      { title: "Interactive Entertainment Solutions | Munch Machine Vending" },
-      { name: "description", content: "Premium interactive entertainment for hotels, gyms, sites and venues — air hockey, basketball, football tables, arcade, claw, racing, dance, boxing, prize machines and kiddie rides." },
-      { property: "og:title", content: "Interactive Entertainment Solutions | Munch Machine" },
-      { property: "og:description", content: "Commercial-grade entertainment that transforms common rooms, lobbies and break areas." },
-      { property: "og:url", content: "/sports-entertainment" },
+      { title: "Entertainment Machines London & Essex | Arcade, Air Hockey, Racing" },
+      { name: "description", content: "Interactive entertainment machines for hotels, gyms, sites and venues in London & Essex — air hockey, basketball, football tables, arcade, claw, racing simulators, dance, boxing, prize machines and kiddie rides." },
+      { property: "og:title", content: "Entertainment Machines London & Essex | Munch Machine Vending" },
+      { property: "og:description", content: "Commercial-grade entertainment machines for London & Essex venues." },
+      { property: "og:url", content: "https://munchmachine.lovable.app/sports-entertainment" },
+      { property: "og:image", content: "https://munchmachine.lovable.app/og-entertainment.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/sports-entertainment" }],
+    links: [{ rel: "canonical", href: "https://munchmachine.lovable.app/sports-entertainment" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://munchmachine.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Entertainment Machines", item: "https://munchmachine.lovable.app/sports-entertainment" },
+          ],
+        }),
+      },
+    ],
   }),
   component: Page,
 });

@@ -28,13 +28,35 @@ import { PageShell, SectionHeader } from "@/components/site/PageShell";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Munch Machine Vending — Premium Vending & Entertainment, London & Essex" },
-      { name: "description", content: "Premium vending machines, coffee solutions and interactive entertainment installed and maintained across London and Essex. Fully managed. No upfront cost." },
-      { property: "og:title", content: "Munch Machine Vending — Premium Vending & Entertainment" },
-      { property: "og:description", content: "Fully managed vending and entertainment for hotels, gyms, offices, sites and student accommodation." },
-      { property: "og:url", content: "/" },
+      { title: "Vending & Coffee Machines London & Essex | Munch Machine Vending Ltd" },
+      { name: "description", content: "Commercial vending machines, bean-to-cup coffee machines and interactive entertainment machines supplied, installed and fully managed across London & Essex. No upfront cost for qualifying businesses." },
+      { name: "keywords", content: "vending machines London, vending machines Essex, office coffee machines London, commercial coffee machines Essex, snack vending machines, business vending solutions Essex" },
+      { property: "og:title", content: "Vending & Coffee Machines London & Essex | Munch Machine Vending Ltd" },
+      { property: "og:description", content: "Premium vending, coffee and interactive entertainment machines — installed, stocked and maintained for London & Essex businesses." },
+      { property: "og:url", content: "https://munchmachine.lovable.app/" },
+      { property: "og:image", content: "https://munchmachine.lovable.app/og-home.jpg" },
+      { name: "twitter:title", content: "Vending & Coffee Machines London & Essex | Munch Machine Vending Ltd" },
+      { name: "twitter:description", content: "Premium vending, coffee and entertainment for London & Essex businesses." },
+      { name: "twitter:image", content: "https://munchmachine.lovable.app/og-home.jpg" },
+      { name: "geo.region", content: "GB-ENG" },
+      { name: "geo.placename", content: "London, Essex" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "https://munchmachine.lovable.app/" },
+      { rel: "preload", as: "image", href: heroImg, fetchPriority: "high" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://munchmachine.lovable.app/" },
+          ],
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });

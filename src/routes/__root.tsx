@@ -56,18 +56,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#111111" },
-      { title: "Munch Machine Vending Ltd — Premium Vending & Entertainment, London & Essex" },
-      { name: "description", content: "We supply, install and maintain premium vending machines and interactive entertainment equipment across London and Essex. Fully managed. No upfront cost for qualifying businesses." },
+      { name: "format-detection", content: "telephone=no" },
+      { title: "Munch Machine Vending Ltd | Vending & Coffee Machines London & Essex" },
+      { name: "description", content: "Commercial vending machines, bean-to-cup coffee machines and interactive entertainment machines supplied, installed and fully managed across London and Essex. No upfront cost for qualifying businesses." },
       { name: "author", content: "Munch Machine Vending Ltd" },
+      { name: "robots", content: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" },
       { property: "og:site_name", content: "Munch Machine Vending Ltd" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Munch Machine Vending Ltd — Premium Vending & Entertainment, London & Essex" },
-      { property: "og:description", content: "We supply, install and maintain premium vending machines and interactive entertainment equipment across London and Essex. Fully managed. No upfront cost for qualifying businesses." },
+      { property: "og:locale", content: "en_GB" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Munch Machine Vending Ltd — Premium Vending & Entertainment, London & Essex" },
-      { name: "twitter:description", content: "We supply, install and maintain premium vending machines and interactive entertainment equipment across London and Essex. Fully managed. No upfront cost for qualifying businesses." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4878a2ce-42ed-43f5-bd6f-bb1f8b24f8d8" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4878a2ce-42ed-43f5-bd6f-bb1f8b24f8d8" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -75,7 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
       },
     ],
     scripts: [
@@ -83,32 +80,59 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "@id": "/#business",
-          name: "Munch Machine Vending Ltd",
-          description: "Premium vending and interactive entertainment machine supply, installation and maintenance for businesses across London and Essex.",
-          telephone: "+44 7944 947419",
-          email: "munchmachinevending.ltd@yahoo.com",
-          areaServed: [
-            { "@type": "City", name: "London" },
-            { "@type": "AdministrativeArea", name: "Essex" },
-          ],
-          priceRange: "££",
-          contactPoint: {
-            "@type": "ContactPoint",
-            telephone: "+44 7944 947419",
-            email: "munchmachinevending.ltd@yahoo.com",
-            contactType: "sales",
-            areaServed: "GB",
-            availableLanguage: ["English"],
-          },
-          openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "18:00" },
-          ],
-          makesOffer: [
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Vending machine supply, installation and management" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bean-to-cup coffee machine solutions" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Interactive entertainment machine supply" } },
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://munchmachine.lovable.app/#organization",
+              name: "Munch Machine Vending Ltd",
+              url: "https://munchmachine.lovable.app",
+              email: "munchmachinevending.ltd@yahoo.com",
+              telephone: "+44 7944 947419",
+              areaServed: [
+                { "@type": "City", name: "London" },
+                { "@type": "AdministrativeArea", name: "Essex" },
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://munchmachine.lovable.app/#website",
+              url: "https://munchmachine.lovable.app",
+              name: "Munch Machine Vending Ltd",
+              publisher: { "@id": "https://munchmachine.lovable.app/#organization" },
+              inLanguage: "en-GB",
+            },
+            {
+              "@type": "LocalBusiness",
+              "@id": "https://munchmachine.lovable.app/#business",
+              name: "Munch Machine Vending Ltd",
+              url: "https://munchmachine.lovable.app",
+              description: "Commercial vending machine, bean-to-cup coffee machine and interactive entertainment machine supply, installation and management across London and Essex.",
+              telephone: "+44 7944 947419",
+              email: "munchmachinevending.ltd@yahoo.com",
+              areaServed: [
+                { "@type": "City", name: "London" },
+                { "@type": "AdministrativeArea", name: "Essex" },
+              ],
+              priceRange: "££",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+44 7944 947419",
+                email: "munchmachinevending.ltd@yahoo.com",
+                contactType: "sales",
+                areaServed: "GB",
+                availableLanguage: ["English"],
+              },
+              openingHoursSpecification: [
+                { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "18:00" },
+                { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "16:00" },
+              ],
+              makesOffer: [
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Snack vending machine supply, installation and management, London & Essex" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Drinks vending machine supply, installation and management, London & Essex" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bean-to-cup coffee machine supply and servicing, London & Essex" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Interactive entertainment machine supply and servicing, London & Essex" } },
+              ],
+            },
           ],
         }),
       },
@@ -122,7 +146,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en-GB">
       <head>
         <HeadContent />
       </head>

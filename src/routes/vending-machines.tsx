@@ -9,13 +9,27 @@ import coffeeImg from "@/assets/machine-coffee.jpg";
 export const Route = createFileRoute("/vending-machines")({
   head: () => ({
     meta: [
-      { title: "Vending Machines — Snack, Drink, Combo & Coffee | Munch Machine" },
-      { name: "description", content: "Premium snack, drink, combination and bean-to-cup coffee vending machines. Supplied, installed and fully managed across London and Essex." },
-      { property: "og:title", content: "Vending Machines | Munch Machine Vending" },
-      { property: "og:description", content: "Snack, drink, combo and coffee vending machines, fully managed." },
-      { property: "og:url", content: "/vending-machines" },
+      { title: "Commercial Vending Machines London & Essex | Snack, Drink & Coffee" },
+      { name: "description", content: "Snack, drink, combination and bean-to-cup coffee vending machines supplied, installed and fully managed across London and Essex. Cashless payments fitted as standard." },
+      { property: "og:title", content: "Commercial Vending Machines London & Essex | Munch Machine Vending" },
+      { property: "og:description", content: "Snack, drink, combo and bean-to-cup coffee vending machines, fully managed across London & Essex." },
+      { property: "og:url", content: "https://munchmachine.lovable.app/vending-machines" },
+      { property: "og:image", content: "https://munchmachine.lovable.app/og-vending.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/vending-machines" }],
+    links: [{ rel: "canonical", href: "https://munchmachine.lovable.app/vending-machines" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://munchmachine.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Vending Machines", item: "https://munchmachine.lovable.app/vending-machines" },
+          ],
+        }),
+      },
+    ],
   }),
   component: Page,
 });
