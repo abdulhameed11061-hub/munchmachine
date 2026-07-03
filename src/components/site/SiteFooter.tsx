@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Linkedin, Instagram, Facebook, ArrowRight } from "lucide-react";
-import logoAsset from "@/assets/uploads/logo-main.png.asset.json";
+import logoAsset from "@/assets/uploads/logo-main.png";
 
 export function SiteFooter() {
   return (
@@ -23,7 +23,7 @@ export function SiteFooter() {
           <div>
             <Link to="/" className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-full overflow-hidden border border-border bg-surface shadow-[var(--shadow-soft)] shrink-0">
-                <img src={logoAsset.url} alt="Munch Machine Vending Ltd logo" width={112} height={112} className="w-full h-full object-cover" />
+                <img src={logoAsset} alt="Munch Machine Vending Ltd logo" width={112} height={112} className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="font-display font-extrabold text-xl">Munch Machine</span>

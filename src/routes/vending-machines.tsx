@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ArrowRight, Coffee, Cookie, CupSoda, Layers } from "lucide-react";
 import { PageShell, PageHero } from "@/components/site/PageShell";
-import smallAsset from "@/assets/uploads/small.png.asset.json";
-import mediumAsset from "@/assets/uploads/medium.png.asset.json";
-import largeAsset from "@/assets/uploads/large.png.asset.json";
+import smallAsset from "@/assets/uploads/small.png";
+import mediumAsset from "@/assets/uploads/medium.png";
+import largeAsset from "@/assets/uploads/large.png";
 import coffeeImg from "@/assets/machine-coffee.jpg";
 
 export const Route = createFileRoute("/vending-machines")({
@@ -22,16 +22,16 @@ export const Route = createFileRoute("/vending-machines")({
 
 function Page() {
   const categories = [
-    { icon: Cookie, name: "Snack Vending",        img: smallAsset.url,  desc: "Crisps, chocolate, healthy bars and grab-and-go essentials, curated to your audience.", features: ["Adjustable spirals", "Drop sensors", "Healthy options available"] },
-    { icon: CupSoda, name: "Drink Vending",       img: mediumAsset.url, desc: "Chilled cans, bottles, isotonics and waters. Refilled on a schedule that matches demand.", features: ["Triple-zone cooling", "Brand favourites", "Bottle & can compatible"] },
-    { icon: Layers, name: "Combination Machines", img: largeAsset.url,  desc: "Snacks and drinks in one beautifully presented unit — the most popular choice.", features: ["Single glass-front", "Dual temp zones", "High-capacity"] },
+    { icon: Cookie, name: "Snack Vending",        img: smallAsset,  desc: "Crisps, chocolate, healthy bars and grab-and-go essentials, curated to your audience.", features: ["Adjustable spirals", "Drop sensors", "Healthy options available"] },
+    { icon: CupSoda, name: "Drink Vending",       img: mediumAsset, desc: "Chilled cans, bottles, isotonics and waters. Refilled on a schedule that matches demand.", features: ["Triple-zone cooling", "Brand favourites", "Bottle & can compatible"] },
+    { icon: Layers, name: "Combination Machines", img: largeAsset,  desc: "Snacks and drinks in one beautifully presented unit — the most popular choice.", features: ["Single glass-front", "Dual temp zones", "High-capacity"] },
     { icon: Coffee, name: "Bean-to-Cup Coffee",   img: coffeeImg, desc: "Barista-grade espresso, lattes and flat whites at the press of a button.", features: ["Fresh beans", "Steam-frothed milk", "Custom branding"] },
   ];
 
   const sizes = [
-    { title: "Small",  capacity: "Up to ~30 lines", ideal: "Salons, studios, small offices",       footprint: "W 700mm · D 800mm · H 1830mm",  img: smallAsset.url },
-    { title: "Medium", capacity: "Up to ~40 lines", ideal: "Hotels, gyms, mid-size offices",       footprint: "W 900mm · D 850mm · H 1900mm",  img: mediumAsset.url, featured: true },
-    { title: "Large",  capacity: "60+ lines",       ideal: "Warehouses, large sites, hospitals",   footprint: "W 1050mm · D 900mm · H 1950mm", img: largeAsset.url },
+    { title: "Small",  capacity: "Up to ~30 lines", ideal: "Salons, studios, small offices",       footprint: "W 700mm · D 800mm · H 1830mm",  img: smallAsset },
+    { title: "Medium", capacity: "Up to ~40 lines", ideal: "Hotels, gyms, mid-size offices",       footprint: "W 900mm · D 850mm · H 1900mm",  img: mediumAsset, featured: true },
+    { title: "Large",  capacity: "60+ lines",       ideal: "Warehouses, large sites, hospitals",   footprint: "W 1050mm · D 900mm · H 1950mm", img: largeAsset },
   ];
 
   return (

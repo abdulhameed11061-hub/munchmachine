@@ -5,23 +5,23 @@ import {
   Gamepad2, Trophy, Sparkles, MapPin, Phone, Quote, Star,
 } from "lucide-react";
 import heroImg from "@/assets/hero-cinematic.jpg";
-import gymAsset from "@/assets/uploads/gym-modern.png.asset.json";
-import hotelAsset from "@/assets/uploads/gallery-hotel-lobby-vending.png.asset.json";
-import officeAsset from "@/assets/uploads/gallery-corporate-break-area.png.asset.json";
-import warehouseAsset from "@/assets/uploads/warehouse-welfare.jpg.asset.json";
-import studentAsset from "@/assets/uploads/student-accommodation.png.asset.json";
-import constructionAsset from "@/assets/uploads/construction-welfare.png.asset.json";
-import smallAsset from "@/assets/uploads/small.png.asset.json";
-import mediumAsset from "@/assets/uploads/medium.png.asset.json";
-import largeAsset from "@/assets/uploads/large.png.asset.json";
+import gymAsset from "@/assets/uploads/gym-modern.png";
+import hotelAsset from "@/assets/uploads/gallery-hotel-lobby-vending.png";
+import officeAsset from "@/assets/uploads/gallery-corporate-break-area.png";
+import warehouseAsset from "@/assets/uploads/warehouse-welfare.jpg";
+import studentAsset from "@/assets/uploads/student-accommodation.png";
+import constructionAsset from "@/assets/uploads/construction-welfare.png";
+import smallAsset from "@/assets/uploads/small.png";
+import mediumAsset from "@/assets/uploads/medium.png";
+import largeAsset from "@/assets/uploads/large.png";
 import coffeeImg from "@/assets/machine-coffee.jpg";
-import airHockeyAsset from "@/assets/uploads/air-hockey-neon.jpg.asset.json";
+import airHockeyAsset from "@/assets/uploads/air-hockey-neon.jpg";
 import basketballImg from "@/assets/ent-basketball.jpg";
 import footballImg from "@/assets/ent-foosball.jpg";
 import arcadeImg from "@/assets/ent-arcade.jpg";
 import grabImg from "@/assets/ent-grab.jpg";
-import boxingAsset from "@/assets/uploads/boxing-arcade.png.asset.json";
-import racingAsset from "@/assets/uploads/racing-simulator-03.jpg.asset.json";
+import boxingAsset from "@/assets/uploads/boxing-arcade.png";
+import racingAsset from "@/assets/uploads/racing-simulator-03.jpg";
 import { PageShell, SectionHeader } from "@/components/site/PageShell";
 
 
@@ -207,7 +207,7 @@ function MachineRange() {
       capacity: "Up to ~30 snack lines",
       ideal: "Small offices, salons, studios",
       features: ["Compact footprint", "Contactless ready", "Energy-efficient cooling"],
-      img: smallAsset.url,
+      img: smallAsset,
     },
     {
       tag: "Most popular",
@@ -215,7 +215,7 @@ function MachineRange() {
       capacity: "Up to ~40 snack & drink lines",
       ideal: "Hotels, gyms, mid-size offices",
       features: ["Glass-front combo", "Cash + card + contactless", "LED interior lighting"],
-      img: mediumAsset.url,
+      img: mediumAsset,
       featured: true,
     },
     {
@@ -224,7 +224,7 @@ function MachineRange() {
       capacity: "60+ snack & drink lines",
       ideal: "Sites, warehouses, large floors",
       features: ["Full-height capacity", "Dual temp zones", "Smart telemetry"],
-      img: largeAsset.url,
+      img: largeAsset,
     },
   ];
   return (
@@ -327,11 +327,11 @@ function WhyUs() {
 /* ──────────────── ENTERTAINMENT ──────────────── */
 function Entertainment() {
   const items = [
-    { title: "Air Hockey",        img: airHockeyAsset.url,  desc: "Tournament-grade LED tables that magnetise a room." },
+    { title: "Air Hockey",        img: airHockeyAsset,  desc: "Tournament-grade LED tables that magnetise a room." },
     { title: "Basketball Arcade", img: basketballImg,       desc: "Commercial hoops with electronic scoring and timers." },
     { title: "Football Tables",   img: footballImg,         desc: "Tournament-spec tables engineered for non-stop play." },
-    { title: "Boxing Machines",   img: boxingAsset.url,     desc: "Punch-power cabinets with digital scoring — the loudest fun in the room." },
-    { title: "Racing Machines",   img: racingAsset.url,     desc: "Twin-seat simulators with curved screens and force-feedback wheels." },
+    { title: "Boxing Machines",   img: boxingAsset,     desc: "Punch-power cabinets with digital scoring — the loudest fun in the room." },
+    { title: "Racing Machines",   img: racingAsset,     desc: "Twin-seat simulators with curved screens and force-feedback wheels." },
     { title: "Arcade & Grab",     img: arcadeImg,           desc: "Modern arcade cabinets and branded grab machines, cashless ready." },
   ];
   return (
@@ -369,12 +369,12 @@ function Entertainment() {
 /* ──────────────── INDUSTRIES ──────────────── */
 function Industries() {
   const list = [
-    { name: "Hotels", img: hotelAsset.url, copy: "Guest-ready 24/7 with premium snack and drink selections." },
-    { name: "Gyms", img: gymAsset.url, copy: "Protein bars, isotonics and recovery essentials, on-tap." },
-    { name: "Offices", img: officeAsset.url, copy: "Bean-to-cup coffee and balanced snacks that boost focus." },
-    { name: "Warehouses", img: warehouseAsset.url, copy: "Welfare-room ready — rugged kit for heavy-traffic break areas." },
-    { name: "Student Accommodation", img: studentAsset.url, copy: "Late-night fuel with cashless convenience." },
-    { name: "Construction Sites", img: constructionAsset.url, copy: "Welfare-cabin machines designed for fast turnaround." },
+    { name: "Hotels", img: hotelAsset, copy: "Guest-ready 24/7 with premium snack and drink selections." },
+    { name: "Gyms", img: gymAsset, copy: "Protein bars, isotonics and recovery essentials, on-tap." },
+    { name: "Offices", img: officeAsset, copy: "Bean-to-cup coffee and balanced snacks that boost focus." },
+    { name: "Warehouses", img: warehouseAsset, copy: "Welfare-room ready — rugged kit for heavy-traffic break areas." },
+    { name: "Student Accommodation", img: studentAsset, copy: "Late-night fuel with cashless convenience." },
+    { name: "Construction Sites", img: constructionAsset, copy: "Welfare-cabin machines designed for fast turnaround." },
   ];
   return (
     <section id="industries" className="py-24 lg:py-32 scroll-mt-24">
