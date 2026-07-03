@@ -1,23 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/site/PageShell";
-import hotelAsset from "@/assets/uploads/gallery-hotel-lobby-vending.png.asset.json";
-import officeAsset from "@/assets/uploads/gallery-corporate-break-area.png.asset.json";
-import gymAsset from "@/assets/uploads/gym-modern.png.asset.json";
-import studentAsset from "@/assets/uploads/student-accommodation.png.asset.json";
-import warehouseAsset from "@/assets/uploads/warehouse-welfare.jpg.asset.json";
-import constructionAsset from "@/assets/uploads/construction-welfare.png.asset.json";
+import hotelAsset from "@/assets/uploads/gallery-hotel-lobby-vending.png";
+import officeAsset from "@/assets/uploads/gallery-corporate-break-area.png";
+import gymAsset from "@/assets/uploads/gym-modern.png";
+import studentAsset from "@/assets/uploads/student-accommodation.png";
+import warehouseAsset from "@/assets/uploads/warehouse-welfare.jpg";
+import constructionAsset from "@/assets/uploads/construction-welfare.png";
 
-import smallAsset from "@/assets/uploads/small.png.asset.json";
-import mediumAsset from "@/assets/uploads/medium.png.asset.json";
-import largeAsset from "@/assets/uploads/large.png.asset.json";
-import coffeeAsset from "@/assets/uploads/gallery-bean-to-cup-coffee-machine.png.asset.json";
-import airHockeyAsset from "@/assets/uploads/gallery-air-hockey-table.jpg.asset.json";
-import basketballAsset from "@/assets/uploads/gallery-basketball-arcade-machine.jpg.asset.json";
-import footballAsset from "@/assets/uploads/gallery-football-table.png.asset.json";
-import boxingAsset from "@/assets/uploads/gallery-boxing-arcade-machine.png.asset.json";
-import racingAsset from "@/assets/uploads/gallery-racing-simulator.jpg.asset.json";
-import arcadeAsset from "@/assets/uploads/gallery-arcade-machine.jpg.asset.json";
-import grabAsset from "@/assets/uploads/gallery-prize-grab-machine.jpg.asset.json";
+import smallAsset from "@/assets/uploads/small.png";
+import mediumAsset from "@/assets/uploads/medium.png";
+import largeAsset from "@/assets/uploads/large.png";
+import coffeeAsset from "@/assets/uploads/gallery-bean-to-cup-coffee-machine.png";
+import airHockeyAsset from "@/assets/uploads/gallery-air-hockey-table.jpg";
+import basketballAsset from "@/assets/uploads/gallery-basketball-arcade-machine.jpg";
+import footballAsset from "@/assets/uploads/gallery-football-table.png";
+import boxingAsset from "@/assets/uploads/gallery-boxing-arcade-machine.png";
+import racingAsset from "@/assets/uploads/gallery-racing-simulator.jpg";
+import arcadeAsset from "@/assets/uploads/gallery-arcade-machine.jpg";
+import grabAsset from "@/assets/uploads/gallery-prize-grab-machine.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -35,26 +35,26 @@ export const Route = createFileRoute("/gallery")({
 
 function Page() {
   const environments = [
-    { src: hotelAsset.url, label: "Hotel lobby vending machine", alt: "Hotel lobby vending machine install for London and Essex hotels" },
-    { src: officeAsset.url, label: "Corporate break area", alt: "Corporate break area vending machine for offices" },
-    { src: gymAsset.url, label: "Boutique gym environment", alt: "Gym vending machine with protein and isotonics" },
-    { src: studentAsset.url, label: "Student accommodation common room", alt: "Student accommodation vending machine common room" },
-    { src: warehouseAsset.url, label: "Warehouse welfare area", alt: "Warehouse welfare vending machine setup" },
-    { src: constructionAsset.url, label: "Construction site welfare unit", alt: "Construction site welfare vending unit" },
+    { src: hotelAsset, label: "Hotel lobby vending machine", alt: "Hotel lobby vending machine install for London and Essex hotels" },
+    { src: officeAsset, label: "Corporate break area", alt: "Corporate break area vending machine for offices" },
+    { src: gymAsset, label: "Boutique gym environment", alt: "Gym vending machine with protein and isotonics" },
+    { src: studentAsset, label: "Student accommodation common room", alt: "Student accommodation vending machine common room" },
+    { src: warehouseAsset, label: "Warehouse welfare area", alt: "Warehouse welfare vending machine setup" },
+    { src: constructionAsset, label: "Construction site welfare unit", alt: "Construction site welfare vending unit" },
   ];
 
   const machines = [
-    { src: smallAsset.url, label: "Small snack vending machine", alt: "Small commercial snack vending machine for London and Essex businesses" },
-    { src: mediumAsset.url, label: "Medium combo vending machine", alt: "Medium combo vending machine with snacks and drinks" },
-    { src: largeAsset.url, label: "Large combination vending machine", alt: "Large combination vending machine for high-traffic sites" },
-    { src: coffeeAsset.url, label: "Fresh bean-to-cup coffee machine", alt: "Bean-to-cup coffee machine for offices" },
-    { src: airHockeyAsset.url, label: "Commercial air hockey table", alt: "Commercial LED air hockey table" },
-    { src: basketballAsset.url, label: "Basketball arcade machine", alt: "Basketball arcade machine cabinet" },
-    { src: footballAsset.url, label: "Football table", alt: "Premium football table for offices and venues" },
-    { src: boxingAsset.url, label: "Boxing arcade machine", alt: "Boxing arcade machine with punch scoring" },
-    { src: racingAsset.url, label: "Racing simulator", alt: "Racing simulator arcade cabinet" },
-    { src: arcadeAsset.url, label: "Arcade machine", alt: "Multi-game arcade machine cabinet" },
-    { src: grabAsset.url, label: "Prize / grab machine", alt: "Prize grab claw machine" },
+    { src: smallAsset, label: "Small snack vending machine", alt: "Small commercial snack vending machine for London and Essex businesses" },
+    { src: mediumAsset, label: "Medium combo vending machine", alt: "Medium combo vending machine with snacks and drinks" },
+    { src: largeAsset, label: "Large combination vending machine", alt: "Large combination vending machine for high-traffic sites" },
+    { src: coffeeAsset, label: "Fresh bean-to-cup coffee machine", alt: "Bean-to-cup coffee machine for offices" },
+    { src: airHockeyAsset, label: "Commercial air hockey table", alt: "Commercial LED air hockey table" },
+    { src: basketballAsset, label: "Basketball arcade machine", alt: "Basketball arcade machine cabinet" },
+    { src: footballAsset, label: "Football table", alt: "Premium football table for offices and venues" },
+    { src: boxingAsset, label: "Boxing arcade machine", alt: "Boxing arcade machine with punch scoring" },
+    { src: racingAsset, label: "Racing simulator", alt: "Racing simulator arcade cabinet" },
+    { src: arcadeAsset, label: "Arcade machine", alt: "Multi-game arcade machine cabinet" },
+    { src: grabAsset, label: "Prize / grab machine", alt: "Prize grab claw machine" },
   ];
 
   return (

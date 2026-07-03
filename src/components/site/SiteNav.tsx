@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, ArrowRight } from "lucide-react";
-import logoAsset from "@/assets/uploads/logo-main.png.asset.json";
+import logoAsset from "@/assets/uploads/logo-main.png";
 
 const nav = [
   { to: "/", label: "Home", short: "Home" },
@@ -45,7 +45,7 @@ export function SiteNav() {
           >
             <Link to="/" className="flex items-center gap-3 group min-w-0" aria-label="Munch Machine Vending home">
               <div className="relative w-10 h-10 rounded-full overflow-hidden border border-border bg-surface shrink-0 shadow-[var(--shadow-soft)]">
-                <img src={logoAsset.url} alt="Munch Machine Vending Ltd logo" width={80} height={80} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={logoAsset} alt="Munch Machine Vending Ltd logo" width={80} height={80} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="flex flex-col leading-none min-w-0">
                 <span className="font-display font-extrabold tracking-tight text-[14px] truncate">Munch Machine</span>
